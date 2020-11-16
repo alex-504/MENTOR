@@ -60,8 +60,8 @@ mentors = []
 10.times do
 mentors << Mentor.create!(
   user: users.sample,
-  description: "I am specializing in #{Faker::Job.field}",
-  price: Faker::Number.decimal_part(digits: 4),
+  description: "I am specializing in #{Faker::Job.field.downcase}",
+  price: Faker::Number.decimal_part(digits: 5),
   availability: "available on weekends",
   title: Faker::Job.title,
 )
@@ -72,13 +72,14 @@ MentorTag.create!(
 ) 
 end
 
+DURATION = [30, 60, 90]
 10.times do
   Consultation.create!(
   user: users.sample,
   mentor: mentors.sample,
-  details:"I am interested in learning #{Faker::Job.field} ",
+  details:"I am interested in learning #{Faker::Job.field.downcase} ",
   start_time: Faker::Time.forward(days: 5,  period: :evening, format: :long),
-  duration: 60,  
+  duration: DURATION.sample,  
 )
 end
 
