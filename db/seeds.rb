@@ -24,6 +24,30 @@ users << User.create!(
   )
 end
 
+users << User.create!(
+    name: "Alex",
+    email: "alexandre.ealimentos@gmail.com",
+    password: "password",
+    role: Faker::Company.industry,
+    linkedin_url: Faker::Internet.email,
+  )
+  
+users << User.create!(
+    name: "Aline",
+    email: "as.utiyama@gmail.com",
+    password: "password",
+    role: Faker::Company.industry,
+    linkedin_url: Faker::Internet.email,
+  )
+  
+users << User.create!(
+    name: "Sho",
+    email: "ikirenohs@gmail.com",
+    password: "password",
+    role: Faker::Company.industry,
+    linkedin_url: Faker::Internet.email,
+  )
+
 TAGS = [ "Facebook Marketing", "Web Development", "Financial advisor", "Information Security Analyst", "Software Developer", "Medical Technologist"]
 tag_instances = []
 TAGS.each do |tag|
@@ -31,7 +55,6 @@ TAGS.each do |tag|
     name: tag
   )
 end
-
 
 mentors = [] 
 10.times do
