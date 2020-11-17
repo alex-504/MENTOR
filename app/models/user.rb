@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :mentors, dependent: :destroy
   has_many :consultations, dependent: :destroy
-  validates :name, :email, :password, :role, :linkedin_url, presence: true
+  validates :email, :password, presence: true
 
 end
