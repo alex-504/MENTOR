@@ -79,7 +79,7 @@ DURATION = [30, 60, 90]
   mentor: mentors.sample,
   details:"I am interested in learning #{Faker::Job.field.downcase} ",
   start_time: Faker::Time.forward(days: 5,  period: :evening, format: :long),
-  duration: DURATION.sample,  
+  duration: DURATION.sample,
 )
 end
 
