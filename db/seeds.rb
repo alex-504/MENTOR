@@ -78,7 +78,7 @@ end
   mentor: mentors.sample,
   details:"I am interested in learning #{Faker::Job.field} ",
   start_time: Faker::Time.forward(days: 5,  period: :evening, format: :long),
-  duration: 60,  
+  duration: (),  
 )
 end
 
