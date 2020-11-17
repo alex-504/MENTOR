@@ -6,7 +6,7 @@
 <div class="container my-3">
 
   <div class="consultation-top-wrap">
-    <%= link_to "Access this booking", root_path  %>
+    <%= link_to "Access this booking", root_path, class: "main-button"  %>
     <p>Start time: <%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></p>
     <p>Details: <%= consultation.details %></p>
     <p>Duration: <%= consultation.duration %></p>
@@ -25,6 +25,7 @@
         <p>Mentor price: ¥<%= consultation.mentor.price%>0</p>
         <p>Mentor availability: <%= consultation.mentor.availability%></p> 
         <p>Mentor title: <%= consultation.mentor.title%></p>
+        <p></p> 
       </div>
     </div>
   </div>

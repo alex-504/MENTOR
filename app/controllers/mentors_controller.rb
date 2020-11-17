@@ -12,10 +12,34 @@ class MentorsController < ApplicationController
     @consultation = Consultation.new
     authorize @mentor
   end
+  
+  def new
+    @mentor = Mentor.new
+    authorize @mentor
+  end
+  
+  def create
+    @mentor = Mentor.new(mentor_params)
+    @mentor.user = current_user
+    authorize @mentor
+    if @mentor.save
+      redirect_to mentor_path(@mentor)
+    else
+      render :new
+    end
+  end
 
   private
 
   def mentor_params
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     params.require(:mentor).permit(:description, :price, :availability, :title)
   end
+=======
+=======
+>>>>>>> Stashed changes
+    params.require(:mentor).permit(:description, :price, :availability, :title, :mentor_tag)
+  end  
+>>>>>>> Stashed changes
 end
