@@ -32,11 +32,13 @@ gem 'devise'
 
 gem 'autoprefixer-rails'
 gem 'cloudinary', '~> 1.16.0'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'font-awesome-sass'
 gem 'faker'
 gem 'pundit'
 gem 'simple_form'
-group :development, :test do  gem 'pry-byebug'
+group :development, :test do  
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
 

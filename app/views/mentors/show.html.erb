@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <%#= if policy(Mentor).show? %>
@@ -7,8 +8,11 @@
           <h1><%= @mentor.user.name %></h1>
           <h2><%= @mentor.title %></h2>
           <p><%= @mentor.description %></p>
-          <p><strong>Price: </strong>¥<%= @mentor.price %>/h</p>
-          <p><strong>Availability: </strong> <%= @mentor.availability %></p>          
+          <p><strong>Price: </strong>¥<%= @mentor.price %>/30min</p>
+          <p><strong>Availability: </strong> <%= @mentor.availability %></p>
+          <% @mentor.tags.each do |tag| %>
+            <p><strong>Speciality: </strong><%= tag.name %></p>
+          <% end  %>
         </div>
       </div>
   </div>
