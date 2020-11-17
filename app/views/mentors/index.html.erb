@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Mentors</h2>
+  <div class="card-grid">
+      <% @mentors.each do |mentor| %>
+        <div class="mentor-cards">
+          <div class="">
+            <img src="https://img.favpng.com/0/25/10/computer-icons-teacher-png-favpng-sJASskmgxhuZQK1YaXjUMPjZG.jpg" alt="avatar" class="avatar-large">
+            <h6><%= mentor.user.name %></h6>
+            <p><%= mentor.title %></p>
+          </div>
+          <div class="stars">
+            <% 5.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
+          <div class="mentor-price">
+            <p><span>¥<%= mentor.price %></span>/30min</p>
+          </div>
+          <div class="mentor-tag">
+            <% mentor.tags.each do |tag| %>
+              <p><%= tag.name %></p>
+            <% end %>
+          </div>
+          <div class="book-btn">
+            <%= link_to 'Book', mentor_path(mentor),  class: 'main-button'%>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

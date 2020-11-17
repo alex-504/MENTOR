@@ -1,0 +1,35 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+p {
+  font-weight: 300;
+  font-size: 14px;
+  color: rgb(120, 120, 120)
+}
+
+.notice {
+  margin-bottom: 0;
+}
+
+.alert {
+  margin-bottom: 0;
+}

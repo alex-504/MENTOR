@@ -30,4 +30,79 @@
   }
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
 
+.mentor-cards {
+  background-color: #f8fbff;
+  margin: 8px;
+  padding: 12px;
+  max-width: 250px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 0;
+  }
+
+  h6, p {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .book-btn {
+
+    align-self: stretch;
+  }
+  .main-button {
+    padding: 4px 12px;
+    border-radius: 24px;
+    margin: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .stars {
+    flex-direction: row;
+  }
+
+  i {
+    color: #f5d534;
+
+    font-size: 12px;
+  }
+
+  .mentor-tag {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .mentor-tag p {
+    background-color: #dae8fb;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 10px;
+    margin: 4px;
+    color: rgb(51,51,51);
+  }
+
+  .mentor-price span {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+}
+
+.mentor-cards:hover {
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.09);
+}
