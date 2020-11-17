@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <%#= if policy(Mentor).show? %>
+      <div class="row justify-content-around align-items-center">
+        <div>
+          <img src="https://img.favpng.com/0/25/10/computer-icons-teacher-png-favpng-sJASskmgxhuZQK1YaXjUMPjZG.jpg" alt="avatar-pic-here" class="avatar-large">
+          <h1><%= @mentor.user.name %></h1> 
+          <h2><%= @mentor.title %></h2>
+          <p><%= @mentor.description %></p>
+          <p><strong>Price: </strong>¥<%= @mentor.price %>/h</p>
+          <p><strong>Availability: </strong> <%= @mentor.availability %></p>          
+        </div>
+      </div>
+  </div>
+</div>
