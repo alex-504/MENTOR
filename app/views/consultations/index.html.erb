@@ -1,12 +1,13 @@
 <h1 style="text-align: center"> Consultations </h1>
 
 
-<% @consultations.each do |consultation|  %>
-<div class="consultation-wrap">
+<div class="container my-5">
+  <% @consultations.each do |consultation|  %>
+<div class="container my-3">
 
   <div class="consultation-top-wrap">
     <%= link_to "Access this booking", root_path  %>
-    <p>Start time: <%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></p> 
+    <p>Start time: <%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></p>
     <p>Details: <%= consultation.details %></p>
     <p>Duration: <%= consultation.duration %></p>
   </div>
@@ -28,6 +29,7 @@
     </div>
   </div>
   <% end  %>
+</div>
 </div>
         
         

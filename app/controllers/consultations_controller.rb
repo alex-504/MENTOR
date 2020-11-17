@@ -2,11 +2,10 @@ class ConsultationsController < ApplicationController
   
   def index
     @consultations = policy_scope(Consultation).order(created_at: :desc)
-    @consultation = policy_scope(Consultation)
   end
   
   def show
-    @consultation = Consultation.find(params[:id]
+    @consultation = Consultation.find(params[:id])
   end
 
   def create
@@ -18,7 +17,6 @@ class ConsultationsController < ApplicationController
     
     if @consultation.save
       redirect_to consultations_path
-    else
       render :new
     end
   end    
