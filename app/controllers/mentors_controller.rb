@@ -32,14 +32,6 @@ class MentorsController < ApplicationController
   private
 
   def mentor_params
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    params.require(:mentor).permit(:description, :price, :availability, :title)
-  end
-=======
-=======
->>>>>>> Stashed changes
     params.require(:mentor).permit(:description, :price, :availability, :title, :mentor_tag)
-  end  
->>>>>>> Stashed changes
+  end 
 end
