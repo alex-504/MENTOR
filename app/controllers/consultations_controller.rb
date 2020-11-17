@@ -5,5 +5,9 @@ class ConsultationsController < ApplicationController
     @consultation = policy_scope(Booking)
   end
 
+    def new
+      
+    end
+    
 
 end
