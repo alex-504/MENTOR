@@ -12,5 +12,8 @@
         </div>
       </div>
   </div>
-  <%=link_to 'Book me', new_mentor_consultation_path(@mentor), class:'btn btn-primary'%>
+  <div class="container">
+    <strong><p>Book this mentor now!</p></strong>
+  <%= render 'consultations/form' %>
+  </div>
 </div>

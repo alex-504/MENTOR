@@ -1,11 +1,13 @@
 class ConsultationPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
   
-  def index?
+  def create?
     true
   end
+  
+  
 end

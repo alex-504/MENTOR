@@ -2,12 +2,29 @@ class ConsultationsController < ApplicationController
   
   def index
     @consultations = policy_scope(Consultation).order(created_at: :desc)
-    @consultation = policy_scope(Booking)
+  end
+  
+  def show
+    @consultation = Consultation.find(params[:id])
   end
 
-    def new
-      
-    end
+  def create
+    @mentor = Mentor.find(params[:mentor_id])
+    @consultation = Consultation.new(consultation_params)
+    @consultation.user = current_user
+    @consultation.mentor = @mentor
+    authorize @consultation
     
+    if @consultation.save
+      redirect_to consultations_path
+    else
+      render :new
+    end
+  end    
 
+  private
+
+  def consultation_params
+    params.require(:consultation).permit(:details, :start_time, :duration)
+  end
 end
