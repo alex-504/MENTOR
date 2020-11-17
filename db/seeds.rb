@@ -31,7 +31,7 @@ users << User.create!(
     role: Faker::Company.industry,
     linkedin_url: Faker::Internet.email,
   )
-  
+
 users << User.create!(
     name: "Aline",
     email: "as.utiyama@gmail.com",
@@ -39,7 +39,7 @@ users << User.create!(
     role: Faker::Company.industry,
     linkedin_url: Faker::Internet.email,
   )
-  
+
 users << User.create!(
     name: "Sho",
     email: "ikirenohs@gmail.com",
@@ -56,7 +56,7 @@ TAGS.each do |tag|
   )
 end
 
-mentors = [] 
+mentors = []
 10.times do
 mentors << Mentor.create!(
   user: users.sample,
@@ -69,7 +69,7 @@ mentors << Mentor.create!(
 MentorTag.create!(
   mentor: mentors.sample,
   tag: tag_instances.sample,
-) 
+)
 end
 
 DURATION = [30, 60, 90]
