@@ -5,7 +5,8 @@ class ConsultationPolicy < ApplicationPolicy
     end
   end
   
-  def index?
+  def create?
     true
   end
+  
 end
