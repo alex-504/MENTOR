@@ -1,19 +1,26 @@
 <div class="container">
-  <div class="row">
-    <%#= if policy(Mentor).show? %>
-      <div class="row justify-content-around align-items-center">
-        <div>
-          <img src="https://img.favpng.com/0/25/10/computer-icons-teacher-png-favpng-sJASskmgxhuZQK1YaXjUMPjZG.jpg" alt="avatar-pic-here" class="avatar-large">
-          <h1><%= @mentor.user.name %></h1>
-          <h2><%= @mentor.title %></h2>
-          <p><%= @mentor.description %></p>
-          <p><strong>Price: </strong>¥<%= @mentor.price %>/h</p>
-          <p><strong>Availability: </strong> <%= @mentor.availability %></p>          
+  <%#= if policy(Mentor).show? %>
+    <div class="mentor-info-main">
+      <div class="mentor-block">
+        <img src="https://img.favpng.com/0/25/10/computer-icons-teacher-png-favpng-sJASskmgxhuZQK1YaXjUMPjZG.jpg" alt="avatar-pic-here" class="avatar-large">
+        <h6><%= @mentor.user.name %></h6>
+        <p><%= @mentor.title %></p>
+        <div class="stars">
+            <% 5.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
         </div>
       </div>
-  </div>
-  <div class="container">
-    <strong><p>Book this mentor now!</p></strong>
-  <%= render 'consultations/form' %>
+      <div class="mentor-description">
+        <p id="description"><%= @mentor.description %></p>
+        <div class="mentor-details">
+          <p><strong>Price: </strong><span>¥<%= @mentor.price %></span>/30min</p>
+          <p><strong>Availability: </strong> <%= @mentor.availability %></p>
+        </div>
+      </div>
+    </div>
+  <div class="booking-form">
+    <h5 class="text-center">Book this mentor now!</h5>
+    <%= render 'consultations/form' %>
   </div>
 </div>
