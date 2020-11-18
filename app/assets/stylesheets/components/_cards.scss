@@ -74,13 +74,14 @@
 
   .stars {
     flex-direction: row;
-  }
 
-  i {
+    i {
     color: #f5d534;
-
     font-size: 12px;
+    }
   }
+
+
 
   .mentor-tag {
     display: flex;
@@ -105,4 +106,12 @@
 
 .mentor-cards:hover {
   box-shadow: 0 3px 8px 0 rgba(0,0,0,0.09);
+}
+
+.img-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
