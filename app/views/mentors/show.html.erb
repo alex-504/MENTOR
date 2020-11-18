@@ -1,3 +1,4 @@
+
 <div class="container">
   <%#= if policy(Mentor).show? %>
     <div class="mentor-info-main">
@@ -10,6 +11,9 @@
               <i class="fas fa-star"></i>
             <% end %>
         </div>
+        <% @mentor.tags.each do |tag| %>
+            <p><strong>Speciality: </strong><%= tag.name %></p>
+          <% end  %>
       </div>
       <div class="mentor-description">
         <p id="description"><%= @mentor.description %></p>
