@@ -1,0 +1,92 @@
+.consultation-card {
+  border: 2px solid #eeeeee;
+  border-radius: 16px;
+  margin: 16px;
+}
+
+.consultation-top-wrap {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 8px 16px;
+
+  span {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  h6 {
+    padding: 8px 0;
+    margin: 0px;
+  }
+
+}
+
+.consultation-info {
+  flex-grow: 1;
+  padding: 0 16px;
+}
+
+.consultation-bottom-wrap {
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #eeeeee;
+}
+
+.consultation-bottom-left {
+  display:flex;
+  flex-direction: column;
+  align-items:left;
+  border-right: 2px solid #eeeeee;
+  padding: 0px;
+  flex:50%;
+  padding: 16px;
+}
+
+.consultation-bottom-right {
+  display:flex;
+  flex-direction: column;
+  align-items:right;
+  padding: 0px;
+  flex:50%;
+  padding: 16px;
+}
+
+.consultation-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  .third-button {
+    text-align: center;
+    font-weight: 300px;
+    border-radius: 24px;
+    margin: 0 0 50px 0;
+  }
+}
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
