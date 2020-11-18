@@ -1,9 +1,25 @@
 class MentorsController < ApplicationController
 
-  def index
-    @mentors = policy_scope(Mentor).order(created_at: :asc)
-    @mentor = policy_scope(Mentor)
-
+  def index 
+    # @mentors= policy_scope(Mentor).order(created_at: :asc)
+    # @tags = Tag.all
+    
+    # @mentor = policy_scope(Mentor)
+    # @tags.each do |tag|
+    #   tag.name
+    # end
+    
+    if params[:query].present?
+      # @mentors = Mentor.where("mentor_tag ILIKE ?", "%#{params[:query]}%")
+      @mentors = policy_scope(Mentor).mentor_and_tag_search(params[:query])
+    else
+      @mentors= policy_scope(Mentor).order(created_at: :asc)
+    end
+    
+    # tag?
+    # iterate over @tags?
+    # iterate over Mentor.mentor_tag.tag?? 
+    
   end
 
   def show
