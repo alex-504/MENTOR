@@ -3,7 +3,7 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :price, label: "Price_Per_30_minutes" %>
-  <%= f.date_field :availability, as: :date, html5: true, class: "form-control", label: "availability" %>
+  <%= f.date_field :availability, html5: true, class: "form-control", label: "availability" %>
   <%= f.association :tags, input_html: { multiple: true } %> 
   <%= f.submit class: "main-button" %>
 <% end  %>

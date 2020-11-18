@@ -2,7 +2,8 @@
   <div class="container">
     <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
     <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="main-button" href="#">Apply now</a>
+    <%# <a class="main-button" href="#">Apply now</a> %>
+    <%= link_to "Apply now",  new_user_registration_path, class: "main-button"  %>
   </div>
 </div>
 <div class="container">

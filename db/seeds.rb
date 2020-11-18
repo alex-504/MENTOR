@@ -48,7 +48,7 @@ users << User.create!(
     linkedin_url: Faker::Internet.email,
   )
 
-TAGS = [ "Facebook Marketing", "Web Development", "Financial advisor", "Information Security Analyst", "Software Developer", "Medical Technologist"]
+TAGS = [ "Facebook Marketing", "Web Development", "Financial advisor", "Information Security Analyst", "Software Developer", "Medical Technologist", "Human Resources"]
 tag_instances = []
 TAGS.each do |tag|
   tag_instances << Tag.create!(
