@@ -17,11 +17,18 @@
           <h6>Total: ¥<%= total_price %> </h6>
         </div>
         <div class="consultation-buttons">
-          <p class="third-button">Pending</p>
+          <div>
+            <% if consultation.status == "Pending" %>
+              <p class="third-button"><%= consultation.status %> </p>
+            <% elsif consultation.status == "Rejected" %>
+              <p class="red-button"><%= consultation.status %> </p>
+            <% else %>
+              <p class="green-button"><%= consultation.status %> </p>
+            <% end %>
+          </div>
           <%= link_to "Access this booking", root_path, class: "main-button"  %>
         </div>
       </div>
-
     </div>
   <% end %>
 </div>

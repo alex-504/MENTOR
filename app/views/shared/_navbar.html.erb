@@ -11,13 +11,14 @@
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Find Mentor", mentors_path, class: "main-button" %>
+            <%= link_to "Become Mentor", new_mentor_path, class: "second-button" %>
           </li>
 
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "My Consultations", consultations_path, class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Mentor Requests", mentor_consultation_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

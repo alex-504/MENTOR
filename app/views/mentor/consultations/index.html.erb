@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>My Consultations</h1>
+  <div class="consultations-board">
+    <% @consultations.each do |consultation| %>
+      <div class="consultations-board-card">
+        <div>
+          <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+        </div>
+        <div class="info">
+          <ul>
+            <li><%= consultation.user.name %></li>
+            <li><%= consultation.start_time %></li>
+            <li><%= consultation.duration %></li>
+            <li><%= consultation.details %></li>
+          </ul>
+        </div>
+        <div class="buttons">
+          <%= simple_form_for consultation do |f| %>
+            <%= f.input :status, input_html: { value: 'Accepted'}, as: :hidden %>
+            <%= f.submit "Accept", class: 'main-button' %>
+          <% end %>
+          <%= simple_form_for consultation do |f| %>
+            <%= f.input :status, input_html: { value: 'Rejected'}, as: :hidden %>
+            <%= f.submit "Reject", class: 'second-button' %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
