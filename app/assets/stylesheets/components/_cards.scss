@@ -52,11 +52,13 @@
     margin-left: auto;
     margin-right: auto;
     padding: 24px 0;
+
   }
 
   h6, p {
     text-align: center;
     margin-bottom: 0;
+    margin: 0 auto;
   }
   .book-btn {
 
@@ -89,12 +91,12 @@
   }
 
   .mentor-tag p {
-    background-color: #dae8fb;
-    border-radius: 8px;
+    background-color: #11afa0;
+    border-radius: 3px;
     padding: 4px 8px;
     font-size: 10px;
     margin: 4px;
-    color: rgb(51,51,51);
+    color: #fff;
   }
 
   .mentor-price span {
@@ -115,3 +117,4 @@
   object-fit: cover;
   object-position: center;
 }
+

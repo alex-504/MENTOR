@@ -1,43 +1,37 @@
 <h1 style="text-align: center"> Consultations </h1>
-
-
-<div class="container my-5">
+<div class="container">
   <% @consultations.each do |consultation|  %>
-<div class="container my-3">
-
-  <div class="consultation-top-wrap">
-    <%= link_to "Access this booking", root_path, class: "main-button"  %>
-    <p>Start time: <%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></p>
-    <p>Details: <%= consultation.details %></p>
-    <p>Duration: <%= consultation.duration %></p>
-  </div>
-  
-    <div class="consultation-bottom-wrap">
-      <div class="consultation-bottom-left">
-        <h2>Student name: <%= consultation.user.name %></h2>
-        <p>email: <%= consultation.user.email %></p>
-        <p>role: <%= consultation.user.role %></p>
-        <p>linkedin url: <%= consultation.user.linkedin_url %></p>
-      </div>        
-      <div class="consultation-bottom-right">
-        <h2>Mentor name: <%= consultation.mentor.user.name%></h2>
-        <p>Mentor description: <%= consultation.mentor.description%></p>
-        <p>Mentor price: ¥<%= consultation.mentor.price%>0</p>
-        <p>Mentor availability: <%= consultation.mentor.availability%></p> 
-        <p>Mentor title: <%= consultation.mentor.title%></p>
-        <p></p> 
+    <% price = consultation.duration / 30 %>
+    <% total_price = price * consultation.mentor.price %>
+    <div class="consultation-card">
+      <div class="consultation-top-wrap">
+        <div>
+          <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+        </div>
+        <div class="consultation-info">
+          <h5>Mentor: <%= consultation.mentor.user.name%></h5>
+          <p><span>Start time: </span><%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></p>
+          <p><span>Details: </span><%= consultation.details %></p>
+          <p><span>Duration: </span><%= consultation.duration %></p>
+          <p><span>Price/30min: </span>¥<%= consultation.mentor.price%></p>
+          <h6>Total: ¥<%= total_price %> </h6>
+        </div>
+        <div class="consultation-buttons">
+          <p class="third-button">Pending</p>
+          <%= link_to "Access this booking", root_path, class: "main-button"  %>
+        </div>
       </div>
+
     </div>
-  </div>
-  <% end  %>
+  <% end %>
 </div>
-</div>
-        
-        
-
-          
 
 
-          
+
+
+
+
+
+
 
 
