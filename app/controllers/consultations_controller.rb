@@ -6,6 +6,7 @@ class ConsultationsController < ApplicationController
   
   def show
     @consultation = Consultation.find(params[:id])
+    authorize @consultation
   end
 
   def create
