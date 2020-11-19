@@ -25,7 +25,7 @@
         <p id="description"><%= @mentor.description %></p>
         <div class="mentor-details">
           <p><strong>Availability: </strong> <%= @mentor.availability %></p>
-          <p><strong>Price: </strong><span>¥<%= @mentor.price %></span>/30min</p>
+          <p><strong>Price: ¥</strong><span id="price"><%= @mentor.price %></span>/30min</p>
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
           <li>Startin on: </li>
           <li>Duration: </li>
           <li>Topics: </li>
-          <li>Total: ¥0</li>
+          <li id="total">Total: ¥0</li>
         </ul>
       </div>
     </div>
