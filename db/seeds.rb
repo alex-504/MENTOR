@@ -5,23 +5,48 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "open-uri"
+
 User.destroy_all
 Tag.destroy_all
 Mentor.destroy_all
 MentorTag.destroy_all
 Consultation.destroy_all
 
+def seed_image(file_name)
+  File.open(File.join(Rails.root, "/app/assets/images/seed/#{file_name}.jpg"))
+end
+
+
+
 puts "creating Users, Tags, Mentors, Mentor_Tags and Consultations"
 
 users = []
 10.times do
-users << User.create!(
+user =  User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.email,
     password: "password",
     role: Faker::Company.industry,
     linkedin_url: Faker::Internet.email,
+    
+    # avatar_images = Unsplash::Photo.search('architecture', 1, 25)
+
+    #   unsplash_images.each do |unsplash_image|
+    #     image = Properties::Image.create!(
+    #       property: property,
+    #       category: Properties::Image.categories.keys.sample,
+    #       taken_on: rand(5..200).days.ago,
+    #       title: unsplash_image.description,
+    #       file_remote_url: unsplash_image.urls.regular
+    #     )
+    #     Properties::Images::Publisher.(image)
+    #   end
   )
+  file = URI.open('https://i.pravatar.cc/300')
+  user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  users << user 
 end
 
 users << User.create!(
@@ -48,7 +73,7 @@ users << User.create!(
     linkedin_url: Faker::Internet.email,
   )
 
-TAGS = [ "Facebook Marketing", "Web Development", "Financial advisor", "Information Security Analyst", "Software Developer", "Medical Technologist", "Human Resources"]
+TAGS = [ "Facebook Marketing", "Web Development", "Financial Advising", "Information Security", "Software Developing", "Human Resources", "Statistics", "IT", "Operation Research", "Accounting", "Market Research", "Business Operations Manager", "Marketing Management"]
 tag_instances = []
 TAGS.each do |tag|
   tag_instances << Tag.create!(
@@ -57,9 +82,9 @@ TAGS.each do |tag|
 end
 
 
-10.times do
+users.each do |user|
   mentor = Mentor.create!(
-    user: users.sample,
+    user: user,
     description: "I am specializing in #{Faker::Job.field.downcase}",
     price: Faker::Number.decimal_part(digits: 5),
     availability: "available on weekends",
