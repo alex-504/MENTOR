@@ -4,7 +4,7 @@
     <%= f.input :description %>
     <%= f.input :price, label: "Price_Per_30_minutes" %>
     <%= f.date_field :availability, as: :date, html5: true, class: "form-control", label: "availability" %>
-    <%= f.association :tags, input_html: { multiple: true } %>
+    <%= f.association :tags, input_html: { class: 'select2', multiple: true }, class: "js-example-basic-multiple" %>
     <%= f.submit class: "main-button" %>
   <% end  %>
 </div>
