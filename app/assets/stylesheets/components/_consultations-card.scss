@@ -1,8 +1,13 @@
 .consultation-card {
-  border: 2px solid #eeeeee;
+  border: 1px solid #eeeeee;
   border-radius: 16px;
-  margin: 16px;
+  margin: 24px 0;
 }
+
+.consultation-card:hover {
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.09);
+}
+
 
 .consultation-top-wrap {
 
@@ -33,6 +38,10 @@
 .topics {
   align-items: center;
   margin-left: 0px;
+
+  .tag {
+    font-size: 14px;
+  }
 }
 
 .consultation-info {
@@ -42,19 +51,20 @@
   ul {
     list-style-type: none;
   }
+
 }
 
 .consultation-bottom-wrap {
   display: flex;
   justify-content: center;
-  border-top: 2px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
 }
 
 .consultation-bottom-left {
   display:flex;
   flex-direction: column;
   align-items:left;
-  border-right: 2px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
   padding: 0px;
   flex:50%;
   padding: 16px;
@@ -93,13 +103,13 @@
 }
 
 .consultations-board-card {
-  border: 2px solid #eeeeee;
+  border: 1px solid #eeeeee;
   border-radius: 16px;
-  margin: 16px;
+  margin: 24px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 200px;
+  min-height: 200px;
   padding: 16px 16px 8px 16px;
 
   .info {
@@ -121,7 +131,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 100px;
+    margin-left: 16px;
   }
+}
+
+.consultations-board-card:hover {
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,0.09);
 }
 
 // Smallest device
