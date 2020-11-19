@@ -10,17 +10,22 @@
           <h5><%= consultation.mentor.user.name%></h5>
         </div>
         <div class="consultation-info">
-
           <ul>
             <li><span>Start time: </span><%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></li>
             <li><span>Details: </span><%= consultation.details %></li>
             <li><span>Duration: </span><%= consultation.duration %></li>
+            <li>
+              <div class="row topics">
+                <span>Topics: </span>
+                <% consultation.tags.each do |tag| %>
+                  <p class="tag"><%= tag.name %></p>
+                <% end %>
+              </div>
+            </li>
             <li><span>Price/30min: </span>¥<%= consultation.mentor.price%></li>
           </ul>
-
         </div>
         <div class="consultation-buttons">
-
           <div>
             <% if consultation.status == "Pending" %>
               <p class="third-button"><%= consultation.status %> </p>
@@ -29,8 +34,8 @@
             <% else %>
               <p class="green-button"><%= consultation.status %> </p>
             <% end %>
-          </div>          
-         
+          </div>
+
           <h6>Total: ¥<%= total_price %> </h6>
           <%= link_to "Access this booking", consultation_path(consultation), class: "main-button" %>
 
