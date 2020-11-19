@@ -1,5 +1,5 @@
-<h1 style="text-align: center"> Consultations </h1>
 <div class="container">
+  <h1> Consultations </h1>
   <% @consultations.each do |consultation|  %>
     <% price = consultation.duration / 30 %>
     <% total_price = price * consultation.mentor.price %>
@@ -7,14 +7,17 @@
       <div class="consultation-top-wrap">
         <div>
           <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+          <h5><%= consultation.mentor.user.name%></h5>
         </div>
         <div class="consultation-info">
-          <h5>Mentor: <%= consultation.mentor.user.name%></h5>
-          <p><span>Start time: </span><%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></p>
-          <p><span>Details: </span><%= consultation.details %></p>
-          <p><span>Duration: </span><%= consultation.duration %></p>
-          <p><span>Price/30min: </span>¥<%= consultation.mentor.price%></p>
-          <h6>Total: ¥<%= total_price %> </h6>
+
+          <ul>
+            <li><span>Start time: </span><%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></li>
+            <li><span>Details: </span><%= consultation.details %></li>
+            <li><span>Duration: </span><%= consultation.duration %></li>
+            <li><span>Price/30min: </span>¥<%= consultation.mentor.price%></li>
+          </ul>
+
         </div>
         <div class="consultation-buttons">
 
@@ -26,11 +29,11 @@
             <% else %>
               <p class="green-button"><%= consultation.status %> </p>
             <% end %>
-          </div>
-          <%= link_to "Access this booking", root_path, class: "main-button"  %>
+          </div>          
+         
+          <h6>Total: ¥<%= total_price %> </h6>
+          <%= link_to "Access this booking", consultation_path(consultation), class: "main-button" %>
 
-          <p class="third-button">Pending</p>
-          <%= link_to "Access this booking", consultation_path(consultation), class: "main-button"  %>
         </div>
       </div>
     </div>
