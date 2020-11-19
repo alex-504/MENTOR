@@ -29,9 +29,11 @@
             <% else %>
               <p class="green-button"><%= consultation.status %> </p>
             <% end %>
-          </div>
+          </div>          
+         
           <h6>Total: ¥<%= total_price %> </h6>
           <%= link_to "Access this booking", consultation_path(consultation), class: "main-button" %>
+
         </div>
       </div>
     </div>
