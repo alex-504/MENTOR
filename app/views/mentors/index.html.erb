@@ -1,21 +1,30 @@
 <div class="container">
   <h2>Mentors</h2>
 
-  <%= form_tag mentors_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find tags"
-  %>
-  <%= submit_tag "Search", class: "main-button" %>
-<% end %>
+  
+  <%#= simple_form_for @mentor do |f| %>
+    <%#= f.association :tags, label: false, input_html: { class: 'select2 js-example-basic-multiple', multiple: true } %>
+    <%#= f.submit class: "main-button" %>
+  <%# end %>
+
+    
+    <%= form_tag(mentors_path, method: :get) do %>
+      <%= select_tag "query[]", options_for_select(@tags.pluck(:name)), class: "select2", placeholder: "Find tags", multiple: true, size: 3%>
+      <%= submit_tag "Submit", class: "main-button"  %>
+    <% end %>
+  
+
 
   <div class="card-grid">
       <% @mentors.each do |mentor| %>
         <div class="mentor-cards">
           <div class="">
             <div class="">
-              <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+              <%  if mentor.user.photo.attached? %>
+                <%= cl_image_tag mentor.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
+              <% else %>
+                <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+              <% end %>
             </div>
             <h6><%= mentor.user.name %></h6>
             <p><%= mentor.title %></p>
