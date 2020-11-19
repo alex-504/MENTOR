@@ -3,8 +3,14 @@
   <div class="consultations-board">
     <% @consultations.each do |consultation| %>
       <div class="consultations-board-card">
+      
         <div>
-          <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+          <%  if consultation.user.photo.attached? %>
+            <%= cl_image_tag consultation.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
+          <% else %>
+            <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+          <% end %>
+          <!-- <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large"> -->
           <h6><%= consultation.user.name %></h6>
         </div>
         <div class="info">
