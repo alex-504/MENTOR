@@ -44,7 +44,7 @@
 
   .mentor-tag p {
     background-color: #fff;
-    border-radius: 3px;
+    border-radius: 24px;
     padding: 4px 8px;
     font-size: 10px;
     margin: 4px;
@@ -73,4 +73,8 @@
 
 .booking-form {
   padding: 48px 0 160px 0;
+}
+
+.select2-container {
+  //width: 100%;
 }
