@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :mentors, dependent: :destroy
   has_many :consultations, dependent: :destroy
+  has_one_attached :photo
   validates :email, :password, presence: true
 
 end
