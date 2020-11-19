@@ -19,7 +19,7 @@ class ConsultationsController < ApplicationController
     if @consultation.save
       redirect_to consultations_path
     else
-      render :new
+      render "mentors/show"
     end
   end
 

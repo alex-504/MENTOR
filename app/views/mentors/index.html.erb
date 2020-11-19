@@ -15,7 +15,11 @@
         <div class="mentor-cards">
           <div class="">
             <div class="">
-              <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+              <%  if mentor.user.photo.attached? %>
+                <%= cl_image_tag mentor.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
+              <% else %>
+                <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+              <% end %>
             </div>
             <h6><%= mentor.user.name %></h6>
             <p><%= mentor.title %></p>
