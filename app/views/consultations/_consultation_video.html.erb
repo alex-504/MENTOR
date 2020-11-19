@@ -3,7 +3,7 @@
 <div class="container">
   
   <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Great stuff!</strong> Your class will start on <strong><%= @consultation.start_time %></strong>. Please, make your preparation.
+    <strong>Great stuff!</strong> Your class will start on <strong><%= @consultation.start_time&.strftime("%b %e, %l:%M %p") %></strong>. Please, make your preparation.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
