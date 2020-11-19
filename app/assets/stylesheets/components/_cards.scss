@@ -32,15 +32,18 @@
 
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  margin: 32px 0;
 }
 
+.mentors-title {
+  margin: 24px 0;
+}
 .mentor-cards {
   background-color: #f8fbff;
   margin: 8px;
   padding: 12px;
-  max-width: 250px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -94,10 +97,11 @@
     background-color: #fff;
     border-radius: 24px;
     padding: 4px 8px;
-    font-size: 10px;
+    font-size: 12px;
     margin: 4px;
     color: #11afa0;
     border: 1px solid #11afa0;
+    font-weight: 500;
   }
 
   .mentor-price span {

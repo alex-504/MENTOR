@@ -7,12 +7,36 @@
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #eeeeee;
-  align-items: flex-end;
+  align-items: center;
+  padding: 8px 16px;
 
   span {
     font-weight: 400;
     font-size: 24px;
   }
+}
+
+.user-main-box {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+
+  .stars {
+    flex-direction: row;
+
+    i {
+    color: #f5d534;
+    font-size: 16px;
+    }
+  }
+
+  .avatar-large {
+    width: 200px;
+  }
+}
+
+.user-main-info {
+  padding: 24px;
 }
 
 .mentor-block {
@@ -25,18 +49,9 @@
     padding-top: 8px;
   }
 
-  .avatar-large {
-    width: 200px;
-  }
 
-  .stars {
-    flex-direction: row;
 
-    i {
-    color: #f5d534;
-    font-size: 12px;
-    }
-  }
+
 
   p {
     margin: 0;
@@ -54,18 +69,16 @@
 }
 
 .mentor-description {
-  background-color: #f8fbff;
-  border-radius: 16px;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid #eeeeee;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0px 1px 5px 0 rgba(0,0,0,0.09);
+  margin: 24px 0;
 
-  p {
-    padding: 8px 16px;
-    margin: 0;
-  }
+
 
   #description {
     padding: 16px;
@@ -73,14 +86,46 @@
 }
 
 .booking-form {
-  padding: 48px 0 160px 0;
+
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  padding: 24px 16px;
+  margin: 16px 0 80px 0;
 }
 
-.booking-details ul {
-  border: 2px solid #eeeeee;
-  border-radius: 16px;
-  padding: 24px 30px;
+.booking-details {
+  border: 1px solid #eeeeee;
+  margin-right: 0px;
+  border-radius: 5px;
+
+  ul {
+  padding: 0px 24px;
   list-style-type: none;
   font-size: 20px;
   margin: 24px 0px;
+
+    li {
+      padding: 16px 0;
+    }
+  }
+}
+
+.bookin-form-row {
+  padding-right: 16px;
+}
+
+#total {
+  font-size: 24px;
+}
+
+.expertise-card {
+  margin: 24px 0;
+}
+
+.expetise-tags {
+  padding: 0 16px;
+
+  .tag {
+    font-size: 14px;
+  }
 }
