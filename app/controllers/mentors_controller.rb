@@ -1,17 +1,13 @@
 class MentorsController < ApplicationController
 
-  def index 
-    
-      @tags = Tag.all
-    
+ def index     
+     @tags = Tag.all
     if params[:query].present?
       # @mentors = Mentor.where("mentor_tag ILIKE ?", "%#{params[:query]}%")
       @mentors = policy_scope(Mentor).mentor_and_tag_search(params[:query])
     else
-      @mentors= policy_scope(Mentor).order(created_at: :asc)
+      @mentors = policy_scope(Mentor).order(created_at: :asc)
     end
-
-    
   end
 
   def show
@@ -20,13 +16,13 @@ class MentorsController < ApplicationController
     @consultation = Consultation.new
     authorize @mentor
   end
-  
+
   def new
     @mentor = Mentor.new
     authorize @mentor
     @tags = Tag.all
   end
-  
+
   def create
     @mentor = Mentor.new(mentor_params)
     @mentor.user = current_user
@@ -40,11 +36,11 @@ class MentorsController < ApplicationController
   end
 
   private
-  
+
   def mentor_params
     params.require(:mentor).permit(:description, :price, :availability, :title, tag_ids: [] )
-  end 
-  
+  end
+
   # simple form took care of this logic
   # def create_mentor_tags
   #   unless params[:mentor][:tag_ids].empty?

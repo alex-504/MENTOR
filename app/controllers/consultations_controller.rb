@@ -38,6 +38,6 @@ class ConsultationsController < ApplicationController
   private
 
   def consultation_params
-    params.require(:consultation).permit(:details, :start_time, :duration, :status)
+    params.require(:consultation).permit(:details, :start_time, :duration, :status, tag_ids: [])
   end
 end

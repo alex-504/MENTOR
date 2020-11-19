@@ -1,0 +1,29 @@
+.screen {
+  background-color: gray;
+  height: 500px;
+  width: 600px;
+  background-repeat: none;
+}
+
+.screen p {
+  color: white;
+  margin: auto;
+  text-align: center;
+}
+
+.dashboard {
+  width: 20%;
+  color: rgb(77, 77, 82);
+  padding-right: 10px;
+}
+
+.panel {
+  color: rgb(77, 77, 82);
+  color: gray;
+  width: 100%;
+  margin: 0 15px;
+}
+
+h3 {
+  color: gray;
+}
