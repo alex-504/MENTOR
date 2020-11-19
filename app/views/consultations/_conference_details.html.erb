@@ -1,8 +1,12 @@
 <h5>Consultation details</h5>
+<hr>
+<% price = @consultation.duration / 30 %>
+<% total_price = price * @consultation.mentor.price %>
 
-<p><strong>Consultation Time: </strong><%= @consultation.start_time%></p>
+<p><strong>Consultation Time: </strong><%= @consultation.start_time&.strftime("%b %e, %l:%M %p") %></p>
 <p><strong>Consultation Time: </strong><%= @consultation.duration%> min.</p>
-<p><strong>Price: $</strong><%= @consultation.mentor.price%> </p>
+<p><strong></strong><h6>Total: ¥<%= total_price %> </h6> </p>
+
 
 
 
