@@ -3,8 +3,8 @@
   <%= simple_form_for @mentor do |f| %>
     <%= f.input :title, label: 'Role Title' %>
     <%= f.input :description, label: 'About' %>
-    <%= f.input :price, label: "Price/30min" %>
-    <%= f.date_field :availability, label: "Availability", as: :date, html5: true, class: "form-control" %>
+    <%= f.input :price, label: "Price/30min", as: :currency %>
+    <%= f.input :availability, label: "Availability", as: :date, html5: true, class: "form-control" %>
     <%= f.label 'Select Expertises' %>
     <%= f.association :tags, label: false, input_html: { class: 'select2 js-example-basic-multiple', multiple: true } %>
     <%= f.submit "Create", class: "main-button" %>
