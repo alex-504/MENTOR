@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Mentors</h2>
-  
+
   <%= form_tag mentors_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -9,7 +9,7 @@
   %>
   <%= submit_tag "Search", class: "main-button" %>
 <% end %>
-  
+
   <div class="card-grid">
       <% @mentors.each do |mentor| %>
         <div class="mentor-cards">
@@ -34,7 +34,7 @@
             <% end %>
           </div>
           <div class="book-btn">
-            <%= link_to 'Book', mentor_path(mentor),  class: 'main-button'%>
+            <%= link_to 'View Profile', mentor_path(mentor),  class: 'main-button'%>
           </div>
         </div>
       <% end %>

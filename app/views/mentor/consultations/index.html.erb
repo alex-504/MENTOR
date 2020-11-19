@@ -5,13 +5,13 @@
       <div class="consultations-board-card">
         <div>
           <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+          <h6><%= consultation.user.name %></h6>
         </div>
         <div class="info">
           <ul>
-            <li><%= consultation.user.name %></li>
-            <li><%= consultation.start_time %></li>
-            <li><%= consultation.duration %></li>
-            <li><%= consultation.details %></li>
+            <li>Date: <%= consultation.start_time %></li>
+            <li>How Long: <%= consultation.duration %></li>
+            <li>Concerns: <%= consultation.details %></li>
           </ul>
         </div>
         <div class="buttons">
