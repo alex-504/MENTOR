@@ -14,4 +14,10 @@
 <p><strong>Status: </strong><%= @consultation.status %></p>
 
 <hr>
+<p>To start the call, please use your <strong>'Room Name' 👈</strong>:</p>
+<h2 id="room-name"><%= @consultation.room_name %></h2>
+<script src="room_code_generator"></script>
+<hr>
+
+<hr>
 <p>Total: <span class="price">¥<%= total_price %></span></p>
