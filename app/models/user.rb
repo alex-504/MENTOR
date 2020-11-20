@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :consultations, dependent: :destroy
   has_one_attached :photo
   validates :email, :password, presence: true
-
+  has_many :consultations_as_mentor, through: :mentor, source: :consultations
 end
