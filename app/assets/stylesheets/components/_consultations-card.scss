@@ -19,7 +19,7 @@
 
   span {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   h5 {
@@ -92,13 +92,17 @@
     text-align: center;
     font-weight: 300px;
     border-radius: 24px;
-    margin: 0 0 50px 0;
+    margin: 0 1px 50px 0;
   }
 
   h6 {
     text-align: right;
     padding: 16px 0;
     font-size: 20px;
+  }
+
+  .main-button {
+    margin-left: 8px;
   }
 }
 
@@ -118,8 +122,14 @@
       list-style-type: none;
     }
 
+  span {
+    font-weight: 500;
+    font-size: 18px;
+  }
 
   }
+
+
 
   h6 {
       text-align: center;
@@ -132,10 +142,14 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
-    min-width: 120px;
+    min-width: 160px;
     margin-left: 16px;
     align-self: stretch;
-    padding: 0 16px 8px 0;
+    padding: 0 0 8px 0;
+
+    .row {
+      margin: 0;
+    }
   }
 }
 
