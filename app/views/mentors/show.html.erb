@@ -7,7 +7,7 @@
         <% else %>
           <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
         <% end %>
-      
+
       <div class="user-main-info">
         <h4><%= @mentor.user.name %></h4>
         <p><%= @mentor.title %></p>
@@ -45,6 +45,7 @@
         <%= render 'consultations/form' %>
       </div>
       <div class="col-4 booking-details">
+        <h4>Booking Details</h4>
         <ul>
           <li id="cons-date">Starting on: </li>
           <li id="cons-duration">Duration: </li>
