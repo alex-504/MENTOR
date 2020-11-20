@@ -1,39 +1,39 @@
-<div class="col-sm-6 col-sm-8 col-sm-10 d-flex">
+<div class="video-room">
+  <div class="col-lg-12 d-flex">
 
-  <div class="dashboard">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-        aria-controls="v-pills-home" aria-selected="true">DETAILS</a>
-      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-        aria-controls="v-pills-profile" aria-selected="false">QUESTIONS</a>
-      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-        aria-controls="v-pills-messages" aria-selected="false">PREPARATION</a>
-      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
-        aria-controls="v-pills-settings" aria-selected="false">VIDEO</a>
-      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
-        aria-controls="v-pills-settings" aria-selected="false"></a>
-    </div>
-  </div>
-
-  <div class="col-lg-6 screen">
-    <iframe class="twilio-video" allow="camera; microphone"
-      src="https://video-app-8070-1181-dev.twil.io?passcode=32587180701181"
-      title="W3Schools Free Online Web Tutorials"></iframe>
-  </div>
-
-  <div class="flex-grow panel">
-    <div class="tab-content" id="v-pills-tabContent">
-      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-        <%= render 'conference_details' %></div>
-      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-        <%= render 'student_questions' %></div>
-      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-        <%= render 'mentor_preparation' %></div>
-      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-        <%= render 'consultation_video' %></div>
+    <div class="dashboard col-lg-1">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+          aria-controls="v-pills-home" aria-selected="true">DETAILS</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+          aria-controls="v-pills-profile" aria-selected="false">QUESTIONS</a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+          aria-controls="v-pills-messages" aria-selected="false">PREPARATION</a>
+        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+          aria-controls="v-pills-settings" aria-selected="false">VIDEO</a>
+        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+          aria-controls="v-pills-settings" aria-selected="false"></a>
+      </div>
     </div>
 
+    <div class="screen col-lg-6">
+      <iframe class="twilio-video" allow="camera; microphone"
+        src="https://video-app-8070-1181-dev.twil.io?passcode=32587180701181"
+        title="W3Schools Free Online Web Tutorials"></iframe>
+    </div>
+
+    <div class="flex-grow panel col-lg-5">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          <%= render 'conference_details' %></div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <%= render 'student_questions' %></div>
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+          <%= render 'mentor_preparation' %></div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+          <%= render 'consultation_video' %></div>
+      </div>
+    </div>
+
   </div>
-
-
 </div>
