@@ -1,6 +1,5 @@
 <div class="container">
   <h2 class="mentors-title">Find Mentors by Expertise</h2>
-
   <%= form_tag mentors_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -8,8 +7,7 @@
     placeholder: "Filter"
   %>
   <%= submit_tag "Search", class: "main-button" %>
-<% end %>
-
+  <% end %>
   <div class="card-grid">
       <% @mentors.each do |mentor| %>
         <div class="mentor-cards">
