@@ -3,7 +3,7 @@
   <div class="consultations-board">
     <% @consultations.each do |consultation| %>
       <div class="consultations-board-card">
-      
+
         <div>
           <%  if consultation.user.photo.attached? %>
             <%= cl_image_tag consultation.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
@@ -15,9 +15,9 @@
         </div>
         <div class="info">
           <ul>
-            <li>Date: <%= consultation.start_time %></li>
-            <li>How Long: <%= consultation.duration %></li>
-            <li>Concerns: <%= consultation.details %></li>
+            <li><span>Date: </span><%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></li>
+            <li><span>How Long: </span><%= consultation.duration %> minutes</li>
+            <li><span>Concerns: </span><%= consultation.details %></li>
             <li>
               <div class="row topics">
                 <span>Topics: </span>
@@ -29,14 +29,30 @@
           </ul>
         </div>
         <div class="buttons">
-          <%= simple_form_for consultation do |f| %>
-            <%= f.input :status, input_html: { value: 'Accepted'}, as: :hidden %>
-            <%= f.submit "Accept", class: 'main-button' %>
-          <% end %>
-          <%= simple_form_for consultation do |f| %>
-            <%= f.input :status, input_html: { value: 'Rejected'}, as: :hidden %>
-            <%= f.submit "Reject", class: 'second-button' %>
-          <% end %>
+          <div>
+            <% if consultation.status == "Pending" %>
+              <p class="third-button"><%= consultation.status %> </p>
+            <% elsif consultation.status == "Rejected" %>
+              <p class="red-button"><%= consultation.status %> </p>
+            <% else %>
+              <p class="green-button"><%= consultation.status %> </p>
+            <% end %>
+          </div>
+          <div class="row">
+            <% if consultation.status == "Accepted" %>
+              <%= link_to "GoTo Room", consultation_path(consultation), class: 'main-button' %>
+            <% end %>
+            <% if consultation.status == "Pending" %>
+              <%= simple_form_for consultation do |f| %>
+              <%= f.input :status, input_html: { value: 'Accepted'}, as: :hidden %>
+              <%= f.submit "Accept", class: 'main-button' %>
+              <% end %>
+              <%= simple_form_for consultation do |f| %>
+              <%= f.input :status, input_html: { value: 'Rejected'}, as: :hidden %>
+              <%= f.submit "Reject", class: 'second-button' %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>

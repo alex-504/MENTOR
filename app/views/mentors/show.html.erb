@@ -1,46 +1,55 @@
 <div class="container">
   <%#= if policy(Mentor).show? %>
-    <div class="mentor-info-main">
-      <div class="mentor-block">
-        <%  if @mentor.user.photo.attached? %>
+  <div>
+    <div class="row user-main-box">
+      <%  if @mentor.user.photo.attached? %>
           <%= cl_image_tag @mentor.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
         <% else %>
           <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
         <% end %>
-        <%# <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0d4CrFaUnD7NjPTdmbULFdsZ9DCcifMoj4Q&usqp=CAU" alt="avatar-pic-here" class="avatar-large"> %>
-        <h6><%= @mentor.user.name %></h6>
+
+      <div class="user-main-info">
+        <h4><%= @mentor.user.name %></h4>
         <p><%= @mentor.title %></p>
         <div class="stars">
-            <% 5.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-        </div>
-        <div>
-          <% @mentor.tags.each do |tag| %>
-            <p class="tag my-2"><strong></strong><%= tag.name %></p>
-          <% end  %>
-        </div>
-      </div>
-      <div class="mentor-description">
-        <p id="description"><%= @mentor.description %></p>
-        <div class="mentor-details">
-          <p><strong>Availability: </strong> <%= @mentor.availability %></p>
-          <p><strong>Price: </strong><span>¥<%= @mentor.price %></span>/30min</p>
+          <% 5.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
         </div>
       </div>
     </div>
+    <div>
+      <div class="mentor-description">
+        <div id="description">
+          <h5>About</h5>
+          <p><%= @mentor.description %></p>
+        </div>
+        <div class="mentor-details">
+          <p><strong>Availability: </strong> <%= @mentor.availability %></p>
+          <p><strong>Price: ¥</strong><span id="price"><%= @mentor.price %></span>/30min</p>
+        </div>
+      </div>
+    </div>
+    <div class="expertise-card">
+      <h6>Mentor Expertises</h6>
+      <div class="row expetise-tags">
+        <% @mentor.tags.each do |tag| %>
+          <p class="tag my-2"><strong></strong><%= tag.name %></p>
+        <% end  %>
+      </div>
+    </div>
+    <h4>Book this mentor now!</h4>
   <div class="booking-form">
-    <h5 class="text-center">Book this mentor now!</h5>
-    <div class="row">
+    <div class="row bookin-form-row">
       <div class="col-8">
         <%= render 'consultations/form' %>
       </div>
       <div class="col-4 booking-details">
+        <h4>Booking Details</h4>
         <ul>
-          <li>Starting on: </li>
-          <li>Duration: </li>
-          <li>Topics: </li>
-          <li>Total: ¥0</li>
+          <li id="cons-date"><span>Starting on: </span></li>
+          <li id="cons-duration"><span>Duration: </span></li>
+          <li id="total"><span>Total:</span> ¥0</li>
         </ul>
       </div>
     </div>

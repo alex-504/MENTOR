@@ -17,8 +17,8 @@
         <div class="consultation-info">
           <ul>
             <li><span>Start time: </span><%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></li>
-            <li><span>Details: </span><%= consultation.details %></li>
-            <li><span>Duration: </span><%= consultation.duration %></li>
+            <li><span>Concerns: </span><%= consultation.details %></li>
+            <li><span>Duration: </span><%= consultation.duration %> minutes</li>
             <li>
               <div class="row topics">
                 <span>Topics: </span>
@@ -40,10 +40,12 @@
               <p class="green-button"><%= consultation.status %> </p>
             <% end %>
           </div>
-
-          <h6>Total: ¥<%= total_price %> </h6>
-          <%= link_to "Access this booking", consultation_path(consultation), class: "main-button" %>
-
+          <div>
+            <h6>Total: ¥<%= total_price %> </h6>
+            <% if consultation.status == "Accepted" %>
+              <%= link_to "GoTo Room", consultation_path(consultation), class: "main-button" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

@@ -14,6 +14,7 @@ class ConsultationsController < ApplicationController
     @consultation = Consultation.new(consultation_params)
     @consultation.user = current_user
     @consultation.mentor = @mentor
+    @consultation.room_name = ('a'..'z').to_a.sample(6).join
     authorize @consultation
 
     if @consultation.save
