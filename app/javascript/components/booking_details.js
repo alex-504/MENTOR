@@ -31,10 +31,11 @@ const updatePrice = () => {
     const hr = new Intl.DateTimeFormat('en', { hour: '2-digit' }).format(d);
     const mi = new Intl.DateTimeFormat('en', { minute: '2-digit' }).format(d);
     console.log(`${da}-${mo}-${ye}`);
+    console.log(d)
     //console.log(dateFormat(d, "dddd, mmmm dS, yyyy, h:MM:ss TT"));
 
     const dateElement = document.querySelector('#cons-date');
-    dateElement.innerHTML = `<li><span>Starting on:</span><br> ${da}-${mo}-${ye} ${hr}:${mi}</li>`
+    dateElement.innerHTML = `<li><span>Starting on:</span><br> ${da}-${mo}-${ye} ${d.getHours()}:${d.getMinutes()}</li>`
   }
 
 
