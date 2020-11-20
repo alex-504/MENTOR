@@ -78,12 +78,12 @@ users << user
 
 mentor = Mentor.create!(
   user: user,
-  description: "I specialize in Full-Stack Web Development",
-  price: Faker::Number.decimal_part(digits: 5),
+  description: "I specialize in Full-Stack, Web Development and Geocoding",
+  price: 5000,
   availability: ["weekdays", "weekends"].sample,
   title: "Founder of MentorHub and Moovers",
 )
-full_stack_tags = ["Full-Stack Development","Web Development"]
+full_stack_tags = ["Full-Stack Development","Web Development", "Geocoding"]
 full_stack_tags.each do |name|
   tag = Tag.where(name: name).first_or_create
   MentorTag.create(
