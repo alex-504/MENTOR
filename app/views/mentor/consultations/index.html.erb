@@ -15,9 +15,9 @@
         </div>
         <div class="info">
           <ul>
-            <li>Date: <%= consultation.start_time %></li>
-            <li>How Long: <%= consultation.duration %></li>
-            <li>Concerns: <%= consultation.details %></li>
+            <li><span>Date: </span><%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></li>
+            <li><span>How Long: </span><%= consultation.duration %> minutes</li>
+            <li><span>Concerns: </span><%= consultation.details %></li>
             <li>
               <div class="row topics">
                 <span>Topics: </span>
