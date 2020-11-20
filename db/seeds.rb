@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require "open-uri"
-
+Mentor.destroy_all
 User.destroy_all
 Tag.destroy_all
-Mentor.destroy_all
+
 MentorTag.destroy_all
 Consultation.destroy_all
 ConsultationTag.destroy_all
@@ -29,7 +29,7 @@ puts "creating Users, Tags, Mentors, Mentor_Tags and Consultations"
 #   )
 #   file = URI.open('https://i.pravatar.cc/300')
 #   user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-#   users << user 
+#   users << user
 # end
 
 users = []
@@ -41,7 +41,7 @@ user = User.create!(
   email: "alexandre.ealimentos@gmail.com",
   password: "password",
   role: "Founder of MentorHub and Moovers",
-  linkedin_url: Faker::Internet.email,   
+  linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://avatars1.githubusercontent.com/u/62379462?s=460&u=f10545a0baecb4a6f0f4709df0ec7b543bb64d35&v=4')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -60,7 +60,7 @@ full_stack_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )   
+    )
 end
 mentors << mentor
 
@@ -70,11 +70,11 @@ user = User.create!(
   email: "as.utiyama@gmail.com",
   password: "password",
   role:  "Founder of MentorHub and Moovers",
-  linkedin_url: Faker::Internet.email,   
+  linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://avatars1.githubusercontent.com/u/29885178?s=460&u=f669e929fc2a4853bc7dcd2de15cf03370608cda&v=4')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-users << user 
+users << user
 
 mentor = Mentor.create!(
   user: user,
@@ -89,7 +89,7 @@ full_stack_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )   
+    )
 end
 mentors << mentor
 
@@ -98,11 +98,11 @@ user = User.create!(
   email: "ikirenohs@gmail.com",
   password: "password",
   role: "Founder of MentorHub and Moovers",
-  linkedin_url: Faker::Internet.email,   
+  linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://avatars2.githubusercontent.com/u/34837760?s=400&u=a0bb771119ebf84930f7effb715346d792c6ef6c&v=4')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-users << user 
+users << user
 
 mentor = Mentor.create!(
   user: user,
@@ -117,7 +117,7 @@ full_stack_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )   
+    )
 end
 mentors << mentor
 
@@ -126,11 +126,11 @@ user = User.create!(
   email: "John.Katz@gmail.com",
   password: "password",
   role: "Senior Front-End Web Developer",
-  linkedin_url: Faker::Internet.email,   
+  linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://i.pravatar.cc/150?img=33')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-users << user 
+users << user
 
 mentor = Mentor.create!(
   user: user,
@@ -145,7 +145,7 @@ front_end_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )   
+    )
 end
 mentors << mentor
 
@@ -154,11 +154,11 @@ user = User.create!(
   email: "Benjamin.Barlowe@gmail.com",
   password: "password",
   role: "Junior Consultant at PQE",
-  linkedin_url: Faker::Internet.email,   
+  linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://i.pravatar.cc/150?img=61')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-users << user 
+users << user
 
 mentor = Mentor.create!(
   user: user,
@@ -173,7 +173,7 @@ consulting_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )   
+    )
 end
 mentors << mentor
 
@@ -185,11 +185,11 @@ user = User.create!(
   email: "dylan.caddle@gmail.com",
   password: "password",
   role: "Junior Accountant at Nokia",
-  linkedin_url: Faker::Internet.email,   
+  linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://i.pravatar.cc/150?img=60')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-users << user 
+users << user
 
 mentor = Mentor.create!(
   user: user,
@@ -204,7 +204,7 @@ accounting_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )   
+    )
 end
 mentors << mentor
 
@@ -217,11 +217,11 @@ user = User.create!(
   email: "beatrice.hale@gmail.com",
   password: "password",
   role: "Customer Care Specialist at Google",
-  linkedin_url: Faker::Internet.email,   
+  linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://i.pravatar.cc/150?img=49')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-users << user 
+users << user
 
 mentor = Mentor.create!(
   user: user,
@@ -236,7 +236,7 @@ customer_care_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )   
+    )
 end
 mentors << mentor
 
@@ -246,7 +246,7 @@ user = User.create!(
   email: "caroline.whitlock@gmail.com",
   password: "password",
   role: "Junior Administrative Support Coordinator at Salesforce",
-  linkedin_url: Faker::Internet.email,   
+  linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://i.pravatar.cc/150?img=48')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -265,7 +265,7 @@ administration_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )   
+    )
 end
 mentors << mentor
 
@@ -274,11 +274,11 @@ user = User.create!(
   email: "audrey.trevino@gmail.com",
   password: "password",
   role: "Full Stack Developer at Atlantic Bay Morgage Group",
-  linkedin_url: Faker::Internet.email,   
+  linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://i.pravatar.cc/150?img=47')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-users << user 
+users << user
 
 mentor = Mentor.create!(
   user: user,
@@ -293,7 +293,7 @@ full_stack_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )   
+    )
 end
 mentors << mentor
 
@@ -303,11 +303,11 @@ user = User.create!(
   email: "katherine.langston@gmail.com",
   password: "password",
   role: 'Head Manager at Weber Shandwick',
-  linkedin_url: Faker::Internet.email,   
+  linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://i.pravatar.cc/150?img=45')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-users << user 
+users << user
 
 mentor = Mentor.create!(
   user: user,
@@ -322,7 +322,7 @@ management_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )   
+    )
 end
 mentors << mentor
 
@@ -331,11 +331,11 @@ mentors << mentor
 #   email: "as.utiyama@gmail.com",
 #   password: "password",
 #   role:  "Founder of MentorHub and Moovers",
-#   linkedin_url: Faker::Internet.email,   
+#   linkedin_url: Faker::Internet.email,
 # )
 # file = URI.open('https://avatars1.githubusercontent.com/u/29885178?s=460&u=f669e929fc2a4853bc7dcd2de15cf03370608cda&v=4')
 # user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# users << user 
+# users << user
 
 # mentor = Mentor.create!(
 #   user: user,
@@ -350,7 +350,7 @@ mentors << mentor
 #   MentorTag.create(
 #     mentor: mentor,
 #     tag: tag
-#     )   
+#     )
 # end
 # mentors << mentor
 
@@ -381,7 +381,7 @@ mentors << mentor
 #     MentorTag.create(
 #       mentor: mentor,
 #       tag: mentor_tag
-#       )  
+#       )
 #     end
 # end
 
@@ -391,11 +391,11 @@ mentors << mentor
 #   email: "John.Katz@gmail.com",
 #   password: "password",
 #   role: "Senior Front End Web Developer",
-#   linkedin_url: Faker::Internet.email,   
+#   linkedin_url: Faker::Internet.email,
 # )
 # file = URI.open('https://i.pravatar.cc/150?img=33')
 # user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# users << user 
+# users << user
 
 
 
@@ -411,11 +411,11 @@ mentors << mentor
 #   MentorTag.create(
 #     mentor: mentor[0],
 #     tag: mentor_tag
-#     )  
+#     )
 #   # end
-  
-  
-  
+
+
+
 #   Mentor.create!(
 #     user: users[7],
 #     description: "I am specializing in Sales Support.",
@@ -424,13 +424,13 @@ mentors << mentor
 #     title: "Market Research at Amazon",
 #   )
 #   mentor_tags = tag_instances
-#   mentor_tags.each do |mentor_tag|  
+#   mentor_tags.each do |mentor_tag|
 #     MentorTag.create(
 #       mentor: mentor,
 #       tag: mentor_tag
-#       )  
+#       )
 #     end
-    
+
 #     Mentor.create!(
 #       user: users[8],
 #       description: "I am specializing in Financial Advising",
@@ -443,9 +443,9 @@ mentors << mentor
 #       MentorTag.create(
 #         mentor: mentor,
 #         tag: mentor_tag
-#         )  
+#         )
 #       end
-      
+
 #       Mentor.create!(
 #         user: users[9],
 #         description: "I am specializing in Facebook Marketing",
@@ -458,7 +458,7 @@ mentors << mentor
 #         MentorTag.create(
 #           mentor: mentor,
 #           tag: mentor_tag
-#           )  
+#           )
 #         end
 
 
@@ -476,7 +476,7 @@ mentors << mentor
 #   tag_instances.sample(2).each do |tag|
 #     ConsultationTag.create!(
 #       consultation: consultation,
-#       tag: tag  
+#       tag: tag
 #     )
 #   end
 # end
