@@ -11,9 +11,9 @@
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Find Mentor", mentors_path, class: "main-button" %>
-            <% unless current_user.mentor %>
+            <%# unless current_user.mentor %>
               <%= link_to "Become Mentor", new_mentor_path, class: "second-button" %>
-            <% end %>
+            <%# end %>
           </li>
 
           <li class="nav-item dropdown">
