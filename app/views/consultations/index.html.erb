@@ -42,7 +42,9 @@
           </div>
           <div>
             <h6>Total: ¥<%= total_price %> </h6>
-            <%= link_to "Access this booking", consultation_path(consultation), class: "main-button" %>
+            <% if consultation.status == "Accepted" %>
+              <%= link_to "GoTo Room", consultation_path(consultation), class: "main-button" %>
+            <% end %>
           </div>
         </div>
       </div>
