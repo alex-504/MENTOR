@@ -1,7 +1,8 @@
 .banner {
   background-size: cover;
-  background-position: center bottom;
-  padding: 328px 40px 64px 40px;
+  background-position: 50% 50%;
+  padding: 745px 40px 64px 40px;
+  position: relative;
 }
 
 .banner h1 {
@@ -18,4 +19,10 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-bottom: 16px;
+}
+
+.home-banner-title {
+  position: absolute;
+  top: 400px;
+  left: 200px;
 }

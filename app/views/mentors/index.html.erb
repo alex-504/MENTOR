@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container padding-top">
   <h2 class="mentors-title">Find Mentors by Expertise</h2>
       <%= form_tag(mentors_path, method: :get) do %>
       <%= select_tag "query[]", options_for_select(@tags.pluck(:name)), class: "select2", placeholder: "Find your tags", multiple: true, size: 3%>
