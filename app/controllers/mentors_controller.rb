@@ -1,7 +1,7 @@
 class MentorsController < ApplicationController
 
- def index     
-     @tags = Tag.all
+  def index     
+    @tags = Tag.all
     if params[:query].present?
       # @mentors = Mentor.where("mentor_tag ILIKE ?", "%#{params[:query]}%")
       @mentors = policy_scope(Mentor).mentor_and_tag_search(params[:query])

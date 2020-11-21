@@ -40,10 +40,12 @@ const updatePrice = () => {
 
 
   const formSelect = document.querySelector('#consultation_duration');
-  formSelect.addEventListener('change', updateTotal);
-
-  const dataSelect = document.querySelector('#consultation_start_time');
-  dataSelect.addEventListener('change', updateDate);
+  if (formSelect) {
+    formSelect.addEventListener('change', updateTotal);
+  
+    const dataSelect = document.querySelector('#consultation_start_time');
+    dataSelect.addEventListener('change', updateDate);    
+  }
 
 
 }
