@@ -55,17 +55,20 @@
     </div>
   </div>
     <div id="reviews">
+
+    <%= simple_form_for([ @mentor, @review ], remote: true) do |f| %>
+      <%= f.input :content, as: :text %>
+      <%= f.submit 'Submit' , class: 'main-button' %>
+    <% end %>
     <% if @mentor.reviews.blank? %>
       Be the first to leave a review for <%= @mentor.user.name %>
     <% else %>
-      <% @mentor.reviews.each do |review| %>
-        <p><%= review.content %></p>
+      <% @mentor.reviews.order(created_at: :desc).each do |review| %>
+        <ul>
+          <li id="review-<%= review.id %>">"<%= review.content %>"</li>
+          <p>- <i><%= @current_user.name %><i></p>
+        </ul>
       <% end %>
-    <% end %>
-
-    <%= simple_form_for([ @mentor, @review ]) do |f| %>
-      <%= f.input :content, as: :text %>
-      <%= f.button :submit, class: "main-button" %>
     <% end %>
   </div>
 
