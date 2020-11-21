@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 
 
   resources :consultations
+    resources :reviews, only: [:new, :create]
 end

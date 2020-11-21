@@ -7,7 +7,6 @@
         <% else %>
           <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
         <% end %>
-
       <div class="user-main-info">
         <h4><%= @mentor.user.name %></h4>
         <p><%= @mentor.title %></p>
@@ -18,6 +17,20 @@
         </div>
       </div>
     </div>
+
+    <div id="reviews">
+    <% if @mentor.reviews.blank? %>
+        <p>Be the first to leave a review for <%= @mentor.user.name %></p>
+      <% else %>
+        <% @mentor.reviews.order(created_at: :desc).each do |review| %>
+          <ul>
+            <li id="review-<%= review.id %>">"<%= review.content %>"</li>
+            <p>- <i><%= @current_user.name %><i></p>
+          </ul>
+        <% end %>
+      <% end %>
+      </div>
+
     <div>
       <div class="mentor-description">
         <div id="description">
@@ -54,21 +67,4 @@
       </div>
     </div>
   </div>
-    <div id="reviews">
-    <%= simple_form_for([ @mentor, @review ], remote: true) do |f| %>
-      <%= f.input :content, as: :text %>
-      <%= f.submit 'Submit' , class: 'main-button' %>
-    <% end %>
-    <% if @mentor.reviews.blank? %>
-      Be the first to leave a review for <%= @mentor.user.name %>
-    <% else %>
-      <% @mentor.reviews.order(created_at: :desc).each do |review| %>
-        <ul>
-          <li id="review-<%= review.id %>">"<%= review.content %>"</li>
-          <p>- <i><%= @current_user.name %><i></p>
-        </ul>
-      <% end %>
-    <% end %>
-  </div>
-
 </div>
