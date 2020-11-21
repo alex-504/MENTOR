@@ -54,5 +54,19 @@
       </div>
     </div>
   </div>
-  <div id="reviews">
+    <div id="reviews">
+    <% if @mentor.reviews.blank? %>
+      Be the first to leave a review for <%= @mentor.user.name %>
+    <% else %>
+      <% @mentor.reviews.each do |review| %>
+        <p><%= review.content %></p>
+      <% end %>
+    <% end %>
+
+    <%= simple_form_for([ @mentor, @review ]) do |f| %>
+      <%= f.input :content, as: :text %>
+      <%= f.button :submit, class: "main-button" %>
+    <% end %>
+  </div>
+
 </div>
