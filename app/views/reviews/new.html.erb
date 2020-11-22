@@ -3,10 +3,10 @@
   <h1>How did it go?</h1>
 
   <div id="reviews">
-    <%= simple_form_for(@mentor, @review) do |f| %>
+    <%= simple_form_for [@mentor, @review] do |f| %>
       <%= f.input :rating, :collection => 1..5%>
       <%= f.input :content, as: :text %>
-      <%= f.submit 'Submit', mentors_path,  class: 'main-button' %>
+      <%= f.submit 'Submit',  class: 'main-button' %>
     <% end %>
   </div>
 

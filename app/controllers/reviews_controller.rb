@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @mentor = Mentor.find(params[:mentor_id])
     authorize @review
   end
 
