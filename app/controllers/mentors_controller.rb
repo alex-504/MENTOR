@@ -14,7 +14,6 @@ class MentorsController < ApplicationController
     #show 1 mentor page
     @mentor = Mentor.find(params[:id])
     @consultation = Consultation.new
-    @review = Review.new
     authorize @mentor
   end
 
