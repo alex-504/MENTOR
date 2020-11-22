@@ -5,15 +5,11 @@ Rails.application.routes.draw do
   resources :mentors do
     resources :consultations, only: [:new, :index, :create ]
     resources :reviews, only: [:new, :create]
-
   end
-
   namespace :mentor do
     get "consultations", to: "consultations#index", as: "consultation"
   end
-
-
-
-  resources :consultations
-    resources :reviews, only: [:new, :create]
+  resources :consultations do
+    resources :reviews, only: [:new, :create] # DELETE THIS ONE, but not yet
+  end
 end

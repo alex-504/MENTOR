@@ -18,7 +18,7 @@ class ConsultationsController < ApplicationController
     authorize @consultation
 
     if @consultation.save
-      redirect_to consultations_path
+      redirect_to mentors_path
     else
       render "mentors/show"
     end
