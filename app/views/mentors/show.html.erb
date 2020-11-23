@@ -2,12 +2,11 @@
   <%#= if policy(Mentor).show? %>
   <div>
     <div class="row user-main-box">
-      <%  if @mentor.user.photo.attached? %>
-          <%= cl_image_tag @mentor.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
-        <% else %>
-          <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
-        <% end %>
-
+      <% if @mentor.user.photo.attached? %>
+        <%= cl_image_tag @mentor.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
+      <% else %>
+        <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+      <% end %>
       <div class="user-main-info">
         <h4><%= @mentor.user.name %></h4>
         <p><%= @mentor.title %></p>
