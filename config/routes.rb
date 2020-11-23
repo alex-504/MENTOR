@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :consultations
 
   resources :users, only: [:show, :update]
+
+  resources :certifications, only: [:create]
 end

@@ -1,5 +1,10 @@
-<%= simple_form_for @consultation.user do |f| %>
-  <%= f.association :tags, label: 'Topics',  collection: @consultation.tags , as: :check_boxes %>
-  <%= hidden_field_tag :consultation_id, @consultation.id %>
-  <%= f.submit %>
+<% @consultation.tags.each do |tag| %>
+  <p><%= tag.name %></p>
+  <%= simple_form_for(Certification.new) do |f| %>
+    <%= f.association :mentor, as: :hidden, input_html: { value: @consultation.mentor.id} %>
+    <%= f.association :tag, as: :hidden, input_html: { value: tag.id} %>
+    <%= f.association :user, as: :hidden, input_html: { value: @consultation.user.id} %>
+    <%= hidden_field_tag :consultation_id, @consultation.id %>
+    <%= f.submit 'Certify'%>
+  <% end %>
 <% end %>

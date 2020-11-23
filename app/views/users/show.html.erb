@@ -8,31 +8,34 @@
       <% end %>
       <h5><%= @user.name %></h5>
       <p><%= @user.role %></p>
+      <p><i class="fas fa-medal"></i></i></i><%= @user.certifications.count %> Knowledge Badges </p>
     </div>
     <div class="col-8">
       <h5>Knowledge Repo</h5>
       <div class="tags-box">
-        <% @user.tags.each do |tag| %>
-          <p class="tag"><%= tag.name %></p>
+        <% @user.certifications.each do |certification| %>
+          <p class="tag"><%= certification.tag.name %></p>
         <% end %>
       </div>
       <div class="time-line">
           <h5>Knowledge Growth Timeline</h5>
-
-            <% @user.certifications.each do |certification| %>
+          <% @user.certifications.each do |certification| %>
             <div class="tags-timeline">
                <p class="time"><%= certification.created_at.strftime("%B #{certification.created_at.day.ordinalize}")  %></p>
                <p class="tag"><%= certification.tag.name %></p>
-
             </div>
-            <div>
-              <p> Mentor name: .... </p>
-              <br>
-              <br>
-              <br>
+            <div class="mentor-info-user-page">
+              <ul>
+                <li>Mentor: <%= certification.mentor.user.name %></li>
+                <li>Title: <%= certification.mentor.title %></li>
+                <li>Reviews: ⭐️⭐️⭐️⭐️⭐️</li>
+                <% certification.mentor.tags do |tag| %>
+                  <li>Expertise: <%= tag.name %></li>
+                <% end %>
+                <br>
+              </ul>
             </div>
-            <% end %>
-
+          <% end %>
       </div>
     </div>
   </div>
