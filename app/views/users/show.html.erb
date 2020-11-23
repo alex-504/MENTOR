@@ -1,0 +1,12 @@
+<div class="container padding-top">
+  <h1><%= @user.name %></h1>
+  <% @user.tags.each do |tag| %>
+    <ul>
+      <li><%= tag.name %></li>
+    </ul>
+  <% end %>
+  <ul>
+    <li><%= @user.email %></li>
+    <li><%= @user.role %></li>
+  </ul>
+</div>

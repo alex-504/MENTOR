@@ -33,7 +33,7 @@
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 40px;
   margin: 32px 0;
 }
 
@@ -49,6 +49,7 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
+  box-shadow: 0 2px 4px rgba(8,8,61,.1);
 
   img {
     display: block;

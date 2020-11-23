@@ -2,6 +2,7 @@
   border: 1px solid #eeeeee;
   border-radius: 16px;
   margin: 24px 0;
+  box-shadow: 0 2px 4px rgba(8,8,61,.1);
 }
 
 .consultation-card:hover {
@@ -115,6 +116,7 @@
   align-items: center;
   min-height: 200px;
   padding: 16px 16px 8px 16px;
+  box-shadow: 0 2px 4px rgba(8,8,61,.1);
 
   .info {
     flex-grow: 1;
