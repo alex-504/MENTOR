@@ -14,6 +14,7 @@
           <% 5.times do %>
             <i class="fas fa-star"></i>
           <% end %>
+          <%= link_to "Reviews", mentor_path(@mentor, :anchor => "reviews") %>
         </div>
       </div>
     </div>
@@ -53,4 +54,36 @@
       </div>
     </div>
   </div>
+
+
+    <div  id="reviews">
+      <h1>Reviews For This Mentor</h1>
+      <% if @mentor.reviews.blank? %>
+          <p></p>
+        <% else %>
+          <% @mentor.reviews.order(created_at: :desc).each do |review| %>
+            <ul>
+
+              <div class="stars">
+                <p>
+                  <% if review.rating.nil? %>
+                    <p></p>
+                  <% else %>
+                    <% review.rating.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    <% (5 - review.rating).times do %>
+                      <i class="far fa-star"></i>
+                    <% end %>
+                  <% end %>
+                </p>
+              </div>
+
+              <li id="review-<%= review.id %>">"<%= review.content %>"</li>
+              <p>- <i><%= @current_user.name %><i></p>
+            </ul>
+          <% end %>
+        <% end %>
+    </div>
+
 </div>
