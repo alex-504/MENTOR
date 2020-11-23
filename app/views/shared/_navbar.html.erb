@@ -24,9 +24,15 @@
             <% end %>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
               <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
-              <%= link_to "Mentor Profile", mentor_path(current_user.mentor), class: "dropdown-item" %>
-              <%= link_to "Mentor Consultations", mentor_consultation_path, class: "dropdown-item" %>
+              <% if current_user.mentor %>
+                <%= link_to "Mentor Profile", mentor_path(current_user.mentor), class: "dropdown-item" %>
+                <%= link_to "Mentor Consultations", mentor_consultation_path, class: "dropdown-item" %>
+              <% end %>
+              <%#= link_to "Mentor Profile", mentor_path(current_user.mentor), class: "dropdown-item" %>
+              <%#= link_to "Mentor Consultations", mentor_consultation_path, class: "dropdown-item" %>
+
               <%= link_to "Consultations", consultations_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
