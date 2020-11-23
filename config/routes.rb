@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   end
 
   resources :consultations
+
+  resources :users, only: [:show, :update]
 end
