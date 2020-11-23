@@ -33,7 +33,7 @@
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 40px;
   margin: 32px 0;
 }
 
@@ -48,7 +48,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(8,8,61,.1);
 
   img {
     display: block;
@@ -99,20 +100,26 @@
     padding: 4px 8px;
     font-size: 12px;
     margin: 4px;
-    color: #11afa0;
-    border: 1px solid #11afa0;
+    color: #14c086;
+    border: 1px solid #14c086;
     font-weight: 500;
+  }
+
+  .mentor-price {
+    padding: 12px 0;
   }
 
   .mentor-price span {
     font-size: 24px;
     font-weight: 400;
+
   }
 
 }
 
 .mentor-cards:hover {
   box-shadow: 0 3px 8px 0 rgba(0,0,0,0.09);
+  text-decoration: none;
 }
 
 .img-circle {

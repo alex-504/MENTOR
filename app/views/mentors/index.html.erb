@@ -6,6 +6,7 @@
     <% end %>
   <div class="card-grid">
       <% @mentors.each do |mentor| %>
+        <%= link_to mentor_path(mentor) do %>
         <div class="mentor-cards">
           <div class="">
             <div class="">
@@ -31,10 +32,8 @@
               <p class="tag"><%= tag.name %></p>
             <% end %>
           </div>
-          <div class="book-btn">
-            <%= link_to 'View Profile', mentor_path(mentor),  class: 'main-button'%>
-          </div>
         </div>
+        <% end %>
       <% end %>
   </div>
 </div>
