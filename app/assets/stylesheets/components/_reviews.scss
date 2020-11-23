@@ -1,3 +1,25 @@
+.review-wrap {
+  display:flex;
+  flex-direction: column;
+}
+
+.review-card {
+  display: flex;
+}
+
+.user-profile-card {
+  justify-content: left;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.user-review-info {
+  justify-content: right;
+  padding-left: 40px;
+
+}
+
 
 .stars {
 
