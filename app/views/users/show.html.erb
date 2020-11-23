@@ -1,0 +1,39 @@
+<div class="container padding-top">
+  <div class="row user-top-info">
+    <div class="col-4 user-info-profile">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, alt: "avatar-large", class: "avatar-large" %>
+      <% else %>
+        <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+      <% end %>
+      <h5><%= @user.name %></h5>
+      <p><%= @user.role %></p>
+    </div>
+    <div class="col-8">
+      <h5>Knowledge Repo</h5>
+      <div class="tags-box">
+        <% @user.tags.each do |tag| %>
+          <p class="tag"><%= tag.name %></p>
+        <% end %>
+      </div>
+      <div class="time-line">
+          <h5>Knowledge Growth Timeline</h5>
+
+            <% @user.certifications.each do |certification| %>
+            <div class="tags-timeline">
+               <p class="time"><%= certification.created_at.strftime("%B #{certification.created_at.day.ordinalize}")  %></p>
+               <p class="tag"><%= certification.tag.name %></p>
+
+            </div>
+            <div>
+              <p> Mentor name: .... </p>
+              <br>
+              <br>
+              <br>
+            </div>
+            <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
