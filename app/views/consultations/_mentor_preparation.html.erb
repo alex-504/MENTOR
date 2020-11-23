@@ -3,10 +3,16 @@
 <hr>
 
 
-<p>🔳 Topic 1: Structures and cow's metabolis</p>
-<p>🔳 Topic 2: Manipulation of society and manipulation of cats</p>
-<p>🔳 Topic 3: Manipulation of society </p>
-<p>🔳 Topic 4: Java is 'NOT' JavaSript</p>
-<p>🔳 https://theuselessweb.com/</p>
+<% if @consultation.mentor.user == current_user %>
+  <%= simple_form_for [@consultation, @topic]  do |f| %>
+    <%= f.input :title %>  
+    <%= hidden_field_tag :consultation_id, @consultation.id %>
+    <%= f.submit "Add new preparation topic", :class => "btn btn-warning" %>
+  <% end %>
+  <hr>
+<% @consultation.topics.each do |topic| %>
+  <%= topic.checked %><li><%= topic.title %></li>
+<% end %>
+<% end %>
 
 <hr>

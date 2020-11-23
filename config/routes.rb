@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     get "consultations", to: "consultations#index", as: "consultation"
   end
 
-  resources :consultations
+  resources :consultations do 
+    resources :topics, only: [:create, :update]
+  end
 
   resources :users, only: [:show, :update]
 end

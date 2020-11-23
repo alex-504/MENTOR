@@ -13,7 +13,7 @@ class ConsultationPolicy < ApplicationPolicy
   def update?
     true
   end
-
+  
 
   
   def show?
