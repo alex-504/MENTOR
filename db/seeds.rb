@@ -60,7 +60,7 @@ full_stack_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )
+  )
 end
 mentors << mentor
 
@@ -69,7 +69,7 @@ user = User.create!(
   name: "Aline Sakamoto Utiyama",
   email: "as.utiyama@gmail.com",
   password: "password",
-  role:  "Founder of MentorHub and Moovers",
+  role:  "CEO, AMORA",
   linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://avatars1.githubusercontent.com/u/29885178?s=460&u=f669e929fc2a4853bc7dcd2de15cf03370608cda&v=4')
@@ -78,18 +78,21 @@ users << user
 
 mentor = Mentor.create!(
   user: user,
-  description: "I specialize in Full-Stack, Web Development and Geocoding",
+  description: "I have been working with e-commerce for more than 5 years, starting from ¥200.000 up
+  to ¥27.000.000 of revenue a year. I would be realy happy to share with you all the strategies you
+  need to build a successful e-commerce company.",
   price: 5000,
   availability: ["weekdays", "weekends"].sample,
-  title: "Founder of MentorHub and Moovers",
+  title: "CEO, AMORA",
 )
-full_stack_tags = ["Full-Stack Development","Web Development", "Geocoding"]
+full_stack_tags = ["Shopify", "E-commerce", "Facebook Marketing", "Management"]
 full_stack_tags.each do |name|
   tag = Tag.where(name: name).first_or_create
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )
+  )
+
 end
 
 mentors << mentor
@@ -118,7 +121,7 @@ full_stack_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )
+  )
 end
 mentors << mentor
 
@@ -146,7 +149,7 @@ front_end_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )
+  )
 end
 mentors << mentor
 
@@ -174,7 +177,7 @@ consulting_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )
+  )
 end
 mentors << mentor
 
@@ -205,7 +208,7 @@ accounting_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )
+  )
 end
 mentors << mentor
 
@@ -237,7 +240,7 @@ customer_care_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )
+  )
 end
 mentors << mentor
 
@@ -266,7 +269,7 @@ administration_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )
+  )
 end
 mentors << mentor
 
@@ -294,7 +297,7 @@ full_stack_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )
+  )
 end
 mentors << mentor
 
@@ -323,7 +326,7 @@ management_tags.each do |name|
   MentorTag.create(
     mentor: mentor,
     tag: tag
-    )
+  )
 end
 mentors << mentor
 
@@ -486,6 +489,3 @@ mentors << mentor
 
 
 puts "Created #{User.count} users, #{Tag.count} tags,#{Mentor.count} mentors, #{MentorTag.count} mentor tags, #{ConsultationTag.count} consultation tags  and #{Consultation.count} consultations"
-
-
-
