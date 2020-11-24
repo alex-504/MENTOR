@@ -28,14 +28,13 @@ import "bootstrap";
 
 
 // Internal imports, e.g:
+import { initConsultationCable } from '../channels/consultation_channel.js'
 import { initSelect2 } from '../components/init_select2';
 import { initStarRating } from '../plugins/init_star_rating';
-import { updatePrice } from '../components/booking_details';
-
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
+  initConsultationCable();
   initSelect2();
   initStarRating();
-  updatePrice();
+  // updatePrice();
 });

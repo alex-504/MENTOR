@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   end
 
 
-  resources :consultations do 
+  resources :consultations do
     resources :topics, only: [:create, :update]
+    resources :messages, only: [:create]
   end
 
 

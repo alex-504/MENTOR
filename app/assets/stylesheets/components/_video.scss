@@ -1,6 +1,11 @@
+
+
 .screen {
   height: 500px;
   width: 600px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .screen p {
