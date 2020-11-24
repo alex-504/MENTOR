@@ -9,7 +9,7 @@
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+          <a class="nav-link <%= params[:new_message] ? "" : "active" %>" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
             aria-selected="true">Details</a>
         </li>
         <li class="nav-item" role="presentation">
@@ -29,12 +29,20 @@
         <!-- <li class="nav-item" role="presentation">
           <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings"
             aria-selected="false">Settings</a>
+
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link <%= params[:new_message] ? "active" : "" %>" id="chats-tab" data-toggle="tab" href="#chats" role="tab" aria-controls="chats"
+            aria-selected="false">Chat</a>
+        </li>
+
         </li> -->
+
       </ul>
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane <%= params[:new_message] ? "" : "active" %>" id="home" role="tabpanel" aria-labelledby="home-tab">
           <%= render 'conference_details' %></div>
         <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <%= render 'student_questions' %></div>
@@ -43,9 +51,27 @@
         <div class="tab-pane" id="certify" role="tabpanel" aria-labelledby="certify-tab">
             <%= render 'certify_form' %></div>
         <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+
+          <%= render 'consultation_video' %>
+            <%= render 'certify_form' %>
+          </div>
+        <div class="tab-pane <%= params[:new_message] ? "active" : "" %>" id="chats" role="tabpanel" aria-labelledby="chats-tab">
+          <%= render 'chat', consultation: @consultation, message: @message %></div>
+      </div>
+      <!-- Tab panes -->
+
+      <div>
+        <%= link_to "Leave a review", new_mentor_review_path(@consultation.mentor), class: "main-button" %>
+      </div>
+
+
+
+
+
           <%= render 'consultation_video' %></div>
       </div>
       <!-- Tab panes -->
+
     </div>
   </div>
   <% unless @consultation.mentor.user == current_user %>
