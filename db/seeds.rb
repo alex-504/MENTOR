@@ -91,6 +91,7 @@ full_stack_tags.each do |name|
     tag: tag
     )
 end
+
 mentors << mentor
 
 user = User.create!(

@@ -1,19 +1,22 @@
-<br>
-<h5>Consultation details</h5>
+<div class="pt-3">
+  <h5>Consultation details</h5>
+</div>
 <hr>
 <p>
   <h2><%= @consultation.start_time&.strftime("%b %e, %l:%M %p") %></h2>
 </p>
 <% price = @consultation.duration / 30 %>
 <% total_price = price * @consultation.mentor.price %>
-<p><% @consultation.tags.each do |tag| %>
-  <p class="tag"><%= tag.name %></p>
-  <% end %></p>
+<div class="row">
+  <% @consultation.tags.each do |tag| %>
+    <p class="tag"><%= tag.name %></p>
+  <% end %>
+</div>
 <p><strong>Duration: </strong><%= @consultation.duration%> min</p>
 <p><strong>Mentor: </strong><%= @consultation.mentor.user.name %></p>
-<p><strong>User: </strong><%= @consultation.user.name %></p>
-<p><strong>Desription: </strong><%= @consultation.mentor.description %></p>
-<p><strong>Status: </strong><%= @consultation.status %></p>
+<p><strong>Mentee: </strong><%= @consultation.user.name %></p>
+<!-- <p><strong>Desription: </strong><%#= @consultation.mentor.description %></p>
+<p><strong>Status: </strong><%#= @consultation.status %></p> -->
 
 <hr>
 <p>To start the call, please use your <strong>'Room Name' 👈</strong>:</p>
@@ -21,4 +24,4 @@
 <script src="room_code_generator"></script>
 <hr>
 
-<p>Total: <span class="price">¥<%= total_price %></span></p>
+<!-- <p>Total: <span class="price">¥<%= total_price %></span></p> -->

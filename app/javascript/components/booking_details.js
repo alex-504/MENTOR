@@ -15,7 +15,7 @@ const updatePrice = () => {
     console.log(mentorPrice)
 
     const totalElement = document.querySelector('#total');
-    totalElement.innerHTML = `<li><span>Total:</span> ¥${total}</li>`
+    totalElement.innerHTML = `<h5><span>Total:</span> ¥${total}</h5>`
 
     const durationElement = document.querySelector('#cons-duration');
     durationElement.innerHTML = `<li><span>Duration:</span><br> ${duration} minutes</li>`
@@ -42,9 +42,9 @@ const updatePrice = () => {
   const formSelect = document.querySelector('#consultation_duration');
   if (formSelect) {
     formSelect.addEventListener('change', updateTotal);
-  
+
     const dataSelect = document.querySelector('#consultation_start_time');
-    dataSelect.addEventListener('change', updateDate);    
+    dataSelect.addEventListener('change', updateDate);
   }
 
 
