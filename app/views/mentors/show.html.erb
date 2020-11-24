@@ -17,8 +17,8 @@
           <% end %>
           <% (5 - @mentor.average_rating).times do %>
             <i class="far fa-star"></i>
-          <% end  %>
-          <%= link_to "Reviews", mentor_path(@mentor, :anchor => "reviews") %>
+          <% end %>
+          <%= link_to "Reviews(#{ @mentor.reviews.count })", mentor_path(@mentor, :anchor => "reviews") %>
         </div>
       </div>
     </div>
