@@ -20,10 +20,12 @@
           <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages"
             aria-selected="false">Preparation</a>
         </li>
+        <% if @consultation.mentor.user == current_user %>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings"
+          <a class="nav-link" id="certify-tab" data-toggle="tab" href="#certify" role="tab" aria-controls="settings"
             aria-selected="false">Certification</a>
         </li>
+        <% end %>
         <!-- <li class="nav-item" role="presentation">
           <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings"
             aria-selected="false">Settings</a>
@@ -38,7 +40,7 @@
           <%= render 'student_questions' %></div>
         <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
           <%= render 'mentor_preparation' %></div>
-        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+        <div class="tab-pane" id="certify" role="tabpanel" aria-labelledby="certify-tab">
             <%= render 'certify_form' %></div>
         <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
           <%= render 'consultation_video' %></div>
@@ -52,6 +54,9 @@
     </div>
   <% end %>
   <% if @consultation.mentor.user == current_user %>
+    <div class="exit-room">
+      <%= link_to "Certify Mentee", "#", class: "second-button", id: 'certify-mentee' %>
+    </div>
     <div class="exit-room">
       <%= link_to "Leave Room", mentor_consultation_path, class: "main-button" %>
     </div>
