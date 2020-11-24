@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   namespace :mentor do
     get "consultations", to: "consultations#index", as: "consultation"
   end
-  resources :consultations
+
+
+  resources :consultations do 
+    resources :topics, only: [:create, :update]
+  end
+
 
   resources :users, only: [:show, :update]
 

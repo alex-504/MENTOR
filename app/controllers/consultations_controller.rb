@@ -6,6 +6,7 @@ class ConsultationsController < ApplicationController
 
   def show
     @consultation = Consultation.find(params[:id])
+    @topic = Topic.new
     authorize @consultation
   end
 

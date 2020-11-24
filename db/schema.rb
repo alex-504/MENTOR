@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_033809) do
+
+ActiveRecord::Schema.define(version: 2020_11_23_071957) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +68,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_033809) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "status", default: "Pending"
     t.string "room_name"
+    t.text "preparation"
     t.index ["mentor_id"], name: "index_consultations_on_mentor_id"
     t.index ["user_id"], name: "index_consultations_on_user_id"
   end
@@ -107,6 +110,15 @@ ActiveRecord::Schema.define(version: 2020_11_23_033809) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "topics", force: :cascade do |t|
+    t.string "title"
+    t.boolean "checked"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "consultation_id", null: false
+    t.index ["consultation_id"], name: "index_topics_on_consultation_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -133,6 +145,8 @@ ActiveRecord::Schema.define(version: 2020_11_23_033809) do
   add_foreign_key "mentor_tags", "mentors"
   add_foreign_key "mentor_tags", "tags"
   add_foreign_key "mentors", "users"
+  add_foreign_key "topics", "consultations"
   add_foreign_key "reviews", "mentors"
   add_foreign_key "reviews", "users"
+
 end
