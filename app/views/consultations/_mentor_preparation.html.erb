@@ -1,18 +1,15 @@
-<br>
-<h5>Preparation</h5>
+<div class="my-3">
+  <h5>Preparation</h5>
+</div>
 <hr>
-
-
 <% if @consultation.mentor.user == current_user %>
   <%= simple_form_for [@consultation, @topic]  do |f| %>
-    <%= f.input :title %>  
+    <%= f.input :title, label: "Content" %>
     <%= hidden_field_tag :consultation_id, @consultation.id %>
-    <%= f.submit "Add new preparation topic", :class => "btn btn-warning" %>
+    <%= f.submit "Add Preparation", :class => "main-button" %>
   <% end %>
   <hr>
 <% @consultation.topics.each do |topic| %>
   <%= topic.checked %><li><%= topic.title %></li>
 <% end %>
 <% end %>
-
-<hr>

@@ -17,7 +17,6 @@
 
 .panel {
   color: rgb(77, 77, 82);
-  color: gray;
   width: 100%;
 }
 
@@ -38,10 +37,21 @@ h3 {
 }
 
 #room-name {
-  color: rgb(228, 34, 147);
+  color: #DC5757;
 }
 
 .video-room {
   margin: 32px auto;
-  padding: 120px 48px 48px 48px;
+  padding: 120px 80px 80px 80px;
+}
+
+.exit-room {
+  text-align: right;
+  margin-top: 40px;
+}
+
+.certification {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }

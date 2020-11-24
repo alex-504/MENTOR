@@ -1,15 +1,10 @@
 <div class="video-room padding-top">
-
   <div class="col-lg-12 d-flex">
-
-
-    <div class="screen col-lg-6">
+    <div class="screen col-lg-7">
       <iframe class="twilio-video" allow="camera; microphone"
         src="https://video-app-8070-1181-dev.twil.io?passcode=32587180701181"
         title="W3Schools Free Online Web Tutorials"></iframe>
     </div>
-
-
     <div class="flex-grow panel col-lg-5">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -27,8 +22,12 @@
         </li>
         <li class="nav-item" role="presentation">
           <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings"
-            aria-selected="false">Settings</a>
+            aria-selected="false">Certification</a>
         </li>
+        <!-- <li class="nav-item" role="presentation">
+          <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings"
+            aria-selected="false">Settings</a>
+        </li> -->
       </ul>
 
       <!-- Tab panes -->
@@ -40,18 +39,21 @@
         <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
           <%= render 'mentor_preparation' %></div>
         <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-          <%= render 'consultation_video' %>
-            <%= render 'certify_form' %>
-          </div>
+            <%= render 'certify_form' %></div>
+        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+          <%= render 'consultation_video' %></div>
       </div>
       <!-- Tab panes -->
-
-      <div>
-        <%= link_to "Leave a review", new_mentor_review_path(@consultation.mentor), class: "main-button" %>
-      </div>
-
-
     </div>
-
   </div>
+  <% unless @consultation.mentor.user == current_user %>
+    <div class="exit-room">
+      <%= link_to "Leave Room", new_mentor_review_path(@consultation.mentor), class: "main-button" %>
+    </div>
+  <% end %>
+  <% if @consultation.mentor.user == current_user %>
+    <div class="exit-room">
+      <%= link_to "Leave Room", mentor_consultation_path, class: "main-button" %>
+    </div>
+  <% end %>
 </div>
