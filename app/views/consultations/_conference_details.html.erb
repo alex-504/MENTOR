@@ -14,9 +14,9 @@
 </div>
 <p><strong>Duration: </strong><%= @consultation.duration%> min</p>
 <p><strong>Mentor: </strong><%= @consultation.mentor.user.name %></p>
-<p><strong>User: </strong><%= @consultation.user.name %></p>
-<p><strong>Desription: </strong><%= @consultation.mentor.description %></p>
-<p><strong>Status: </strong><%= @consultation.status %></p>
+<p><strong>Mentee: </strong><%= @consultation.user.name %></p>
+<!-- <p><strong>Desription: </strong><%#= @consultation.mentor.description %></p>
+<p><strong>Status: </strong><%#= @consultation.status %></p> -->
 
 <hr>
 <p>To start the call, please use your <strong>'Room Name' 👈</strong>:</p>
@@ -24,4 +24,4 @@
 <script src="room_code_generator"></script>
 <hr>
 
-<p>Total: <span class="price">¥<%= total_price %></span></p>
+<!-- <p>Total: <span class="price">¥<%= total_price %></span></p> -->
