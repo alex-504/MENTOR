@@ -108,22 +108,22 @@ file = URI.open('https://avatars2.githubusercontent.com/u/34837760?s=400&u=a0bb7
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
-mentor = Mentor.create!(
-  user: user,
-  description: "I specialize in Full-Stack Web Development",
-  price: Faker::Number.decimal_part(digits: 5),
-  availability: ["weekdays", "weekends"].sample,
-  title: "Founder of MentorHub and Moovers",
-)
-full_stack_tags = ["Full-Stack Development","Web Development"]
-full_stack_tags.each do |name|
-  tag = Tag.where(name: name).first_or_create
-  MentorTag.create(
-    mentor: mentor,
-    tag: tag
-  )
-end
-mentors << mentor
+# mentor = Mentor.create!(
+#   user: user,
+#   description: "I specialize in Full-Stack Web Development",
+#   price: Faker::Number.decimal_part(digits: 5),
+#   availability: ["weekdays", "weekends"].sample,
+#   title: "Founder of MentorHub and Moovers",
+# )
+# full_stack_tags = ["Full-Stack Development","Web Development"]
+# full_stack_tags.each do |name|
+#   tag = Tag.where(name: name).first_or_create
+#   MentorTag.create(
+#     mentor: mentor,
+#     tag: tag
+#   )
+# end
+# mentors << mentor
 
 user = User.create!(
   name: "John Katz",
