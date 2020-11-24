@@ -6,8 +6,10 @@ class User < ApplicationRecord
 
   has_one :mentor, dependent: :destroy
   has_many :consultations, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_many :certifications, dependent: :destroy
   has_many :tags, through: :certifications
+  has_many :certifications, dependent: :destroy
   has_one_attached :photo
 
   has_many :consultations_as_mentor, through: :mentor, source: :consultations

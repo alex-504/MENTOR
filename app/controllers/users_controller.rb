@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     authorize @user
-
     @user.update(user_params)
     redirect_to consultation_path(params[:consultation_id])
 
@@ -17,7 +16,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(tag_ids: [])
+    params.require(:user).permit(:mentor_id, tag_ids: [] )
   end
 
 end

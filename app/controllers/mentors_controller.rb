@@ -1,6 +1,6 @@
 class MentorsController < ApplicationController
 
-  def index     
+  def index
     @tags = Tag.all
     if params[:query].present?
       # @mentors = Mentor.where("mentor_tag ILIKE ?", "%#{params[:query]}%")

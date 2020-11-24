@@ -38,7 +38,8 @@ gem 'faker'
 gem 'pg_search', '~> 2.3.0'
 gem 'pundit'
 gem 'simple_form'
-group :development, :test do  
+gem 'turbolinks_render'
+group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

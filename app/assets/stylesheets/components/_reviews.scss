@@ -1,0 +1,35 @@
+.review-wrap {
+  display:flex;
+  flex-direction: column;
+}
+
+.review-card {
+  display: flex;
+  padding-top: 24px;
+  padding-bottom: 8px;
+
+}
+
+.user-profile-card {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.user-review-info {
+  padding-left: 40px;
+  justify-content: center;
+
+}
+
+
+.stars {
+
+  i {
+    color: #f5d534;
+    font-size: 16px;
+  }
+
+
+}
