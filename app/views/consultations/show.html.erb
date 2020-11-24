@@ -3,7 +3,8 @@
     <div class="screen col-lg-7">
       <iframe class="twilio-video" allow="camera; microphone"
         src="https://video-app-8070-1181-dev.twil.io?passcode=32587180701181"
-        title="W3Schools Free Online Web Tutorials"></iframe>
+        title="W3Schools Free Online Web Tutorials">
+      </iframe>
     </div>
     <div class="flex-grow panel col-lg-5">
       <!-- Nav tabs -->
@@ -21,57 +22,46 @@
             aria-selected="false">Preparation</a>
         </li>
         <% if @consultation.mentor.user == current_user %>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="certify-tab" data-toggle="tab" href="#certify" role="tab" aria-controls="settings"
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="certify-tab" data-toggle="tab" href="#certify" role="tab" aria-controls="settings"
             aria-selected="false">Certification</a>
-        </li>
+          </li>
         <% end %>
         <!-- <li class="nav-item" role="presentation">
           <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings"
             aria-selected="false">Settings</a>
-
-        </li>
+        </li>-->
         <li class="nav-item" role="presentation">
           <a class="nav-link <%= params[:new_message] ? "active" : "" %>" id="chats-tab" data-toggle="tab" href="#chats" role="tab" aria-controls="chats"
             aria-selected="false">Chat</a>
         </li>
-
-        </li> -->
-
       </ul>
-
       <!-- Tab panes -->
       <div class="tab-content">
         <div class="tab-pane <%= params[:new_message] ? "" : "active" %>" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <%= render 'conference_details' %></div>
+          <%= render 'conference_details' %>
+        </div>
         <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <%= render 'student_questions' %></div>
+          <%= render 'student_questions' %>
+        </div>
         <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-          <%= render 'mentor_preparation' %></div>
+          <%= render 'mentor_preparation' %>
+        </div>
         <div class="tab-pane" id="certify" role="tabpanel" aria-labelledby="certify-tab">
-            <%= render 'certify_form' %></div>
-        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-
-          <%= render 'consultation_video' %>
-            <%= render 'certify_form' %>
-          </div>
+          <%= render 'certify_form' %>
+        </div>
+        <!-- <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+          <%#= render 'consultation_video' %>
+          </div> -->
         <div class="tab-pane <%= params[:new_message] ? "active" : "" %>" id="chats" role="tabpanel" aria-labelledby="chats-tab">
-          <%= render 'chat', consultation: @consultation, message: @message %></div>
+          <%= render 'chat', consultation: @consultation, message: @message %>
+        </div>
+        <div>
+          <!-- Tab panes -->
+          <%= render 'consultation_video' %>
+        </div>
       </div>
       <!-- Tab panes -->
-
-      <div>
-        <%= link_to "Leave a review", new_mentor_review_path(@consultation.mentor), class: "main-button" %>
-      </div>
-
-
-
-
-
-          <%= render 'consultation_video' %></div>
-      </div>
-      <!-- Tab panes -->
-
     </div>
   </div>
   <% unless @consultation.mentor.user == current_user %>
@@ -82,8 +72,6 @@
   <% if @consultation.mentor.user == current_user %>
     <div class="exit-room">
       <%= link_to "Certify Mentee", "#", class: "second-button", id: 'certify-mentee' %>
-    </div>
-    <div class="exit-room">
       <%= link_to "Leave Room", mentor_consultation_path, class: "main-button" %>
     </div>
   <% end %>
