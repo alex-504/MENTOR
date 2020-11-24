@@ -1,10 +1,21 @@
+<div class="pt-3">
+  <h5>Certify Mentee</h5>
+</div>
+<hr>
 <% @consultation.tags.each do |tag| %>
-  <p><%= tag.name %></p>
-  <%= simple_form_for(Certification.new) do |f| %>
-    <%= f.association :mentor, as: :hidden, input_html: { value: @consultation.mentor.id} %>
-    <%= f.association :tag, as: :hidden, input_html: { value: tag.id} %>
-    <%= f.association :user, as: :hidden, input_html: { value: @consultation.user.id} %>
-    <%= hidden_field_tag :consultation_id, @consultation.id %>
-    <%= f.submit 'Certify'%>
-  <% end %>
+  <div class="row certification">
+    <ul>
+      <li><%= tag.name %></li>
+    </ul>
+    <div>
+      <%= simple_form_for(Certification.new) do |f| %>
+        <%= f.association :mentor, as: :hidden, input_html: { value: @consultation.mentor.id} %>
+        <%= f.association :tag, as: :hidden, input_html: { value: tag.id} %>
+        <%= f.association :user, as: :hidden, input_html: { value: @consultation.user.id} %>
+        <%= hidden_field_tag :consultation_id, @consultation.id %>
+        <%= f.submit 'Certify', class: 'main-button' %>
+      <% end %>
+    </div>
+  </div>
+  <hr>
 <% end %>

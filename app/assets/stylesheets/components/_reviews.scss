@@ -1,3 +1,7 @@
+.reviews {
+  margin-bottom: 80px;
+}
+
 .review-wrap {
   display:flex;
   flex-direction: column;
@@ -14,6 +18,7 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
 }
 
