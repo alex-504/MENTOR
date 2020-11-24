@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_11_23_071957) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,8 +143,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_071957) do
   add_foreign_key "mentor_tags", "mentors"
   add_foreign_key "mentor_tags", "tags"
   add_foreign_key "mentors", "users"
-  add_foreign_key "topics", "consultations"
   add_foreign_key "reviews", "mentors"
   add_foreign_key "reviews", "users"
-
+  add_foreign_key "topics", "consultations"
 end

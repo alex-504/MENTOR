@@ -18,11 +18,17 @@
             </div>
             <h6><%= mentor.user.name %></h6>
             <p><%= mentor.title %></p>
+            <% if mentor.consultations.count > 0 %>
+              <p><%= mentor.consultations.count %> Consultations</p>
+            <% end %>
           </div>
           <div class="stars">
-            <% 5.times do %>
+            <% mentor.average_rating.times do %>
               <i class="fas fa-star"></i>
             <% end %>
+            <% (5 - mentor.average_rating).times do %>
+              <i class="far fa-star"></i>
+            <% end  %>
           </div>
           <div class="mentor-price">
             <p><span>¥<%= mentor.price %></span>/30min</p>
