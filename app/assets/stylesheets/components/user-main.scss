@@ -11,6 +11,11 @@
   h5 {
     margin: 8px 0 0 0;
   }
+
+  i {
+    color: #f4d34a;
+    font-size: 24px;
+  }
 }
 
 .user-top-info {
@@ -35,6 +40,7 @@
 }
 
 .time-line {
+  margin-bottom: 80px;
 
   h5 {
     margin-top: 32px;
@@ -47,4 +53,17 @@
   border-top: 1px solid #eeeeee;
   padding-top: 8px;
 
+
+  .tag {
+    margin: 0 12px;
+  }
+
+  .time {
+    font-weight: 500;
+
+  }
+}
+
+.mentor-info-user-page {
+  padding-top: 8px;
 }
