@@ -96,24 +96,24 @@
 }
 
 .booking-details {
-  border: 1px solid #eeeeee;
   margin-right: 0px;
   border-radius: 5px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 9px;
 
   ul {
   padding: 0px 24px;
   list-style-type: none;
   font-size: 20px;
-  margin: 24px 0px;
+  margin: 0;
+
 
     li {
       padding: 16px 0;
     }
-  }
-
-  h4 {
-    text-align: center;
-    padding-top: 32px;
   }
 
   span {
@@ -127,6 +127,11 @@
 
 #total {
   font-size: 24px;
+  background-color: #e1f5fb;
+  text-align: center;
+  padding: 16px 0;
+  margin: 0;
+  border-radius: 0 0 8px 8px;
 }
 
 .expertise-card {
@@ -139,4 +144,17 @@
   .tag {
     font-size: 14px;
   }
+}
+
+#bd-title {
+  background-color: #e1f5fb;
+  padding: 16px 0;
+  text-align: center;
+  margin: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+#bd-details {
+  flex-grow: 1;
+  background-color: #e1f5fb4a;
 }
