@@ -3,8 +3,7 @@
   <div class="consultations-board">
     <% @consultations.each do |consultation| %>
       <div class="consultations-board-card">
-
-        <div>
+        <div class="profile-avatar">
           <%  if consultation.user.photo.attached? %>
             <%= cl_image_tag consultation.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
           <% else %>
@@ -44,12 +43,12 @@
             <% end %>
             <% if consultation.status == "Pending" %>
               <%= simple_form_for consultation do |f| %>
-              <%= f.input :status, input_html: { value: 'Accepted'}, as: :hidden %>
-              <%= f.submit "Accept", class: 'main-button' %>
+                <%= f.input :status, input_html: { value: 'Accepted'}, as: :hidden %>
+                <%= f.submit "Accept", class: 'main-button' %>
               <% end %>
               <%= simple_form_for consultation do |f| %>
-              <%= f.input :status, input_html: { value: 'Rejected'}, as: :hidden %>
-              <%= f.submit "Reject", class: 'second-button' %>
+                <%= f.input :status, input_html: { value: 'Rejected'}, as: :hidden %>
+                <%= f.submit "Reject", class: 'second-button' %>
               <% end %>
             <% end %>
           </div>
@@ -58,4 +57,3 @@
     <% end %>
   </div>
 </div>
-

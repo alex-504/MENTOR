@@ -11,6 +11,7 @@
   display: flex;
   padding-top: 24px;
   padding-bottom: 8px;
+  border-bottom: 1px solid #eeeeee;
 
 }
 
@@ -24,7 +25,8 @@
 
 .user-review-info {
   padding-left: 40px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
 
 }
 
@@ -37,4 +39,29 @@
   }
 
 
+}
+
+.coment {
+  padding-top: 8px;
+}
+
+.review-booking {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0 80px 0;
+}
+
+.review-tab {
+  width: 50%;
+  padding-top: 32px;
+  padding-right: 140px;
+
+}
+
+.booking-tab {
+  width: 50%;
+  background-color: #F6FCFE;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.09);
 }

@@ -1,13 +1,12 @@
 <%# We can create a consultation form in our css folder %>
-
 <div class="container">
   <%= simple_form_for [@mentor, @consultation] do |f| %>
-  <%= f.input :start_time, html5: true %>
-  <%= f.input :duration, label: 'Duration/min', collection: Consultation::DURATION, input_html: { value: params[:duration]} , class: 'duration'%>
-  <%= f.input :details, label: 'Questions/Concerns' %>
-  <%#= f.input :image, as: :file, label: 'Picture' %>
-  <%= f.association :tags, label: 'Topics',  collection: @mentor.tags , as: :check_boxes %>
-  <%#= f.association :tags, label: false, input_html: { class: 'select2 js-example-basic-multiple', multiple: true } %>
-  <%= f.submit 'Book this Mentor' , class: 'main-button' %>
-<% end %>
+    <%= f.input :start_time, html5: true %>
+    <%= f.input :duration, label: 'Duration/min', collection: Consultation::DURATION, input_html: { value: params[:duration]} , class: 'duration'%>
+    <%= f.input :details, label: 'Questions/Concerns' %>
+    <%#= f.input :image, as: :file, label: 'Picture' %>
+    <%= f.association :tags, label: 'Topics',  collection: @mentor.tags , as: :check_boxes %>
+    <%#= f.association :tags, label: false, input_html: { class: 'select2 js-example-basic-multiple', multiple: true } %>
+    <%= f.submit "Book #{ @mentor.user.name.split.first }" , class: 'main-button' %>
+  <% end %>
 </div>

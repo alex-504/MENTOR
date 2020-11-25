@@ -5,7 +5,7 @@
     <% total_price = price * consultation.mentor.price %>
     <div class="consultation-card">
       <div class="consultation-top-wrap">
-        <div>
+        <div class="profile-avatar">
           <%  if consultation.mentor.user.photo.attached? %>
             <%= cl_image_tag consultation.mentor.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
           <% else %>
@@ -51,13 +51,3 @@
     </div>
   <% end %>
 </div>
-
-
-
-
-
-
-
-
-
-

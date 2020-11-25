@@ -24,7 +24,7 @@
         <% if @consultation.mentor.user == current_user %>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="certify-tab" data-toggle="tab" href="#certify" role="tab" aria-controls="settings"
-            aria-selected="false">Certification</a>
+            aria-selected="false">Endorsements</a>
           </li>
         <% end %>
         <!-- <li class="nav-item" role="presentation">
@@ -71,7 +71,7 @@
   <% end %>
   <% if @consultation.mentor.user == current_user %>
     <div class="exit-room">
-      <%= link_to "Certify Mentee", "#", class: "second-button", id: 'certify-mentee' %>
+      <%= link_to "Endorse Mentee", "#", class: "second-button", id: 'certify-mentee' %>
       <%= link_to "Leave Room", mentor_consultation_path, class: "main-button" %>
     </div>
   <% end %>
