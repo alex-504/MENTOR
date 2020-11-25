@@ -1,0 +1,9 @@
+<div class="select2-home-wrap">
+  <div class="select2-form">
+    <%= form_tag(mentors_path, method: :get) do %>
+      <%= select_tag "query[]", options_for_select(@tags.pluck(:name)), class: "select2", placeholder: "Find your tags", multiple: true, size: 1%>
+      <%= submit_tag "Find A Mentor", class: "main-button"  %>
+
+    <% end %>
+  </div>
+</div>
