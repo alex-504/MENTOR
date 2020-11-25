@@ -11,6 +11,7 @@ const initConsultationCable = () => {
       received(data) {
         // console.log(data.message_partial); // called when data is broadcast in the cable
         messagesWrap.insertAdjacentHTML('beforeend', data);
+        messagesWrap.scrollTop = messagesWrap.scrollHeight;
       },
     });
   }

@@ -4,7 +4,7 @@ class Consultation < ApplicationRecord
   has_many :consultation_tags, dependent: :destroy
   has_many :tags, through: :consultation_tags
   has_many :topics, dependent: :destroy
-  has_many :messages, dependent: :destroy
+  has_many :messages
 
   validates :details, :start_time, :duration, presence: true
   DURATION = [30, 60, 90, 120]
