@@ -34,7 +34,8 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 import { updatePrice } from '../components/booking_details';
 import { openCertifyContent } from '../components/certify';
-
+import { updateVideoWindow } from '../components/update_video_window';
+ 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -44,4 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   // updatePrice();
   updatePrice();
   openCertifyContent();
+  updateVideoWindow();
 });
