@@ -1,4 +1,4 @@
-<div id="chats-messages" data-consultation-id="<%= consultation.id %>">
+<div id="chats-messages" data-consultation-id="<%= @consultation.id %>">
   <div class="messages-wrap">
     <% consultation.messages.each do |message| %>
       <%= render "messages/message", message: message  %>

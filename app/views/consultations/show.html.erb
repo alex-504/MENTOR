@@ -39,26 +39,26 @@
       <!-- Tab panes -->
       <div class="tab-content">
         <div class="tab-pane <%= params[:new_message] ? "" : "active" %>" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <%= render 'conference_details' %>
+          <%= render 'consultations/conference_details' %>
         </div>
         <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <%= render 'student_questions' %>
+          <%= render 'consultations/student_questions' %>
         </div>
         <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-          <%= render 'mentor_preparation' %>
+          <%= render 'consultations/mentor_preparation' %>
         </div>
         <div class="tab-pane" id="certify" role="tabpanel" aria-labelledby="certify-tab">
-          <%= render 'certify_form' %>
+          <%= render 'consultations/certify_form' %>
         </div>
         <!-- <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
           <%#= render 'consultation_video' %>
           </div> -->
         <div class="tab-pane <%= params[:new_message] ? "active" : "" %>" id="chats" role="tabpanel" aria-labelledby="chats-tab">
-          <%= render 'chat', consultation: @consultation, message: @message %>
+          <%= render 'consultations/chat', consultation: @consultation, message: @message %>
         </div>
         <div>
           <!-- Tab panes -->
-          <%= render 'consultation_video' %>
+          <%= render 'consultations/consultation_video' %>
         </div>
       </div>
       <!-- Tab panes -->

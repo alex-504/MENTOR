@@ -12,7 +12,8 @@ class MessagesController < ApplicationController
         @consultation,
         render_to_string(partial: "message", locals: { consultation: @consultation, message: @message })
       )
-      redirect_to consultation_path(@consultation, anchor: "message-#{@message.id}", new_message: true)
+      # redirect_to consultation_path(@consultation, anchor: "message-#{@message.id}", new_message: true)
+      render "messages/show"
     else
       render "consultations/show"
     end
