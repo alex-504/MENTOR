@@ -8,47 +8,52 @@
       <% end %>
       <h5><%= @user.name %></h5>
       <p><%= @user.role %></p>
-      <p><i class="fas fa-medal"></i><%= @user.certifications.count %> Knowledge Badges </p>
+      <p><i class="fas fa-medal"></i><%= @user.certifications.count %> Endorsements </p>
     </div>
     <div class="col-8">
-      <h5>Knowledge Repo</h5>
-      <div class="tags-box">
-        <% @user.certifications.each do |certification| %>
-          <p class="tag"><%= certification.tag.name %></p>
-        <% end %>
-      </div>
-      <div class="time-line">
-          <h5>Knowledge Growth Timeline</h5>
-          <% @user.certifications.each do |certification| %>
-            <div class="tags-timeline">
-               <p class="time"><%= certification.created_at.strftime("%B #{certification.created_at.day.ordinalize}")  %></p>
-               <p class="tag"><%= certification.tag.name %></p>
-            </div>
-            <div class="mentor-info-user-page">
-              <ul>
-                <li> Rating:
-                  <% certification.mentor.average_rating.times do %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                  <% (5 - certification.mentor.average_rating).times do %>
-                    <i class="far fa-star"></i>
-                  <% end  %>
-                </li>
-                <li>Mentor:
-                  <%= link_to mentor_path(certification.mentor) do  %>
-                    <%= certification.mentor.user.name %>
-                  <% end %>
-                </li>
-                <li>Title: <%= certification.mentor.title %></li>
-                <li>Expertises:
-                  <% certification.mentor.tags.each do |tag| %>
-                    <span><%= tag.name %>,</span>
-                  <% end %>
-                </li>
-                <br>
-              </ul>
+      <div class="end-tags-tab">
+        <h5>Endorsements</h5>
+        <div class="tags-box">
+          <% @user.certifications.uniq { |c| c.tag.name }.each do |certification| %>
+            <div class="end-tags row">
+              <p class="tag-counter"><span><%= @user.certifications.count { |c| c.tag.name == certification.tag.name} %></span></p>
+              <p class="tag-name"><strong><%= certification.tag.name %></strong></p>
             </div>
           <% end %>
+        </div>
+      </div>
+      <h5 class="end-timeline">Endorsement Timeline</h5>
+      <div class="time-line">
+        <% @user.certifications.each do |certification| %>
+          <div class="tags-timeline">
+            <p class="time"><%= certification.created_at.strftime("%B #{certification.created_at.day.ordinalize}")  %></p>
+            <p class="tag"><%= certification.tag.name %></p>
+          </div>
+          <div class="mentor-info-user-page">
+            <ul>
+              <li> Rating:
+                <% certification.mentor.average_rating.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+                <% (5 - certification.mentor.average_rating).times do %>
+                  <i class="far fa-star"></i>
+                <% end  %>
+              </li>
+              <li>Mentor:
+                <%= link_to mentor_path(certification.mentor) do  %>
+                  <%= certification.mentor.user.name %>
+                <% end %>
+              </li>
+              <li>Title: <%= certification.mentor.title %></li>
+              <li>Expertises:
+                <% certification.mentor.tags.each do |tag| %>
+                  <span><%= tag.name %>,</span>
+                <% end %>
+              </li>
+              <br>
+            </ul>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

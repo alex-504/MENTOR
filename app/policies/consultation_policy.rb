@@ -9,16 +9,12 @@ class ConsultationPolicy < ApplicationPolicy
     true
   end
 
-
   def update?
     true
   end
-  
 
-  
   def show?
     true
   end
-  
 
 end
