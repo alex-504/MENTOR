@@ -6,6 +6,7 @@
         src="https://video-app-8070-1181-dev.twil.io?passcode=22802380701181"
         title="Mentor Consultation Room">
       </iframe>
+      <p>Video sessions starts at</p><h1><%= <%= @consultation.start_time&.strftime("%b %e, %l:%M %p") %>  %></h1>
     </div>
     <div class="flex-grow panel col-lg-5">
       <!-- Nav tabs -->
@@ -25,7 +26,7 @@
         <% if @consultation.mentor.user == current_user %>
           <li class="nav-item" role="presentation">
             <a class="nav-link" id="certify-tab" data-toggle="tab" href="#certify" role="tab" aria-controls="settings"
-            aria-selected="false">Certification</a>
+            aria-selected="false">Endorsements</a>
           </li>
         <% end %>
         <!-- <li class="nav-item" role="presentation">
@@ -72,7 +73,7 @@
   <% end %>
   <% if @consultation.mentor.user == current_user %>
     <div class="exit-room">
-      <%= link_to "Certify Mentee", "#", class: "second-button", id: 'certify-mentee' %>
+      <%= link_to "Endorse Mentee", "#", class: "second-button", id: 'certify-mentee' %>
       <%= link_to "Leave Room", mentor_consultation_path, class: "main-button" %>
     </div>
   <% end %>

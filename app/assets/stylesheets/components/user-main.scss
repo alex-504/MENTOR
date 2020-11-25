@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   padding-top: 16px;
+  position: sticky;
+  top: 120px;
 
   .avatar-large {
     width: 240px;
@@ -18,39 +20,72 @@
   }
 }
 
+.end-tags-tab {
+  // position: sticky;
+  // top: 120px;
+  // z-index: 1;
+}
+
+.end-timeline {
+  padding: 32px 0 4px 0;
+  border-bottom: 1px solid #eee;
+  margin: 0;
+}
+
 .user-top-info {
   align-items: start;
 
 }
 
 .tags-box {
-  display: flex;
-  align-items: start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 12px;
+  //display: flex;
+  //align-items: start;
+  // flex-wrap: wrap;
   border: 1px solid #eeeeee;
   border-radius: 8px;
   padding: 16px;
-  min-height: 200px;
+  // min-height: 200px;
   margin: 8px 0;
   box-shadow: 0 2px 4px rgba(8, 8, 61, 0.1);
 
   ul {
     list-style-type: none;
   }
+
+  .tag-name {
+    margin: 0px 8px;
+  }
+
+  .tag-counter {
+    background-color: #14c086;
+    padding: 0px 9px;
+    border-radius: 56px;
+    color: white;
+  }
+
+  .end-tags {
+    margin: 0;
+  }
 }
 
 .time-line {
   margin-bottom: 80px;
+  height: 400px;
+  overflow: scroll;
 
   h5 {
     margin-top: 32px;
+    // position: sticky;
+    // top: 278px;
   }
 }
 
 .tags-timeline {
   display: flex;
   align-items: center;
-  border-top: 1px solid #eeeeee;
   padding-top: 8px;
 
 
@@ -66,6 +101,8 @@
 
 .mentor-info-user-page {
   padding-top: 8px;
+  padding-top: 8px;
+  border-bottom: 1px solid #eeeeee;
 
   i {
     color: #f5d534;

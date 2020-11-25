@@ -1,5 +1,5 @@
 <div class="pt-3">
-  <h5>Certify Mentee</h5>
+  <h5>Endorse Mentee</h5>
 </div>
 <hr>
 <% @consultation.tags.each do |tag| %>
@@ -13,7 +13,7 @@
         <%= f.association :tag, as: :hidden, input_html: { value: tag.id} %>
         <%= f.association :user, as: :hidden, input_html: { value: @consultation.user.id} %>
         <%= hidden_field_tag :consultation_id, @consultation.id %>
-        <%= f.submit 'Certify', class: 'main-button' %>
+        <%= f.submit 'Endorse', class: 'main-button' %>
       <% end %>
     </div>
   </div>

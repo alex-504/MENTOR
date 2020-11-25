@@ -3,17 +3,19 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @mentor = Mentor.find(params[:mentor_id])
+    @consultation = Consultation.new
     authorize @review
   end
 
   def create
     @mentor = Mentor.find(params[:mentor_id])
     @review = Review.new(review_params)
+    @consultation = Consultation.new
     @review.mentor = @mentor
     @review.user = current_user
     authorize @review
     if @review.save
-      redirect_to mentor_path(@mentor)
+      render :new
     else
       render :new
     end
