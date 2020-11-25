@@ -1,0 +1,11 @@
+<div class="home-form-wrap">
+  <div class="home-form">
+    <%#= simple_form_for [@mentor,@tag] do |f| %>
+      <%#= f.association :mentor, input_html: { class: 'select2' }  %>
+    <%# end %>
+    <%= form_tag(root_path, method: :get) do %>
+      <%= select_tag "query[]", options_for_select(@tags.pluck(:name)), class: "select2", placeholder: "Find your tags", multiple: true, size: 3%>
+      <%= submit_tag "Submit", class: "main-button"  %>
+    <% end %>
+  </div>
+</div>
