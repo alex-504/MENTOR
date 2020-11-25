@@ -62,7 +62,11 @@
     </div>
     <div class="reviews">
       <div  id="reviews">
-        <h3>Reviews(<%= @mentor.reviews.count  %>)</h3>
+        <% if @mentor.reviews.count == 0 %>
+          <p></p>
+        <% else %>
+          <h3>Reviews(<%= @mentor.reviews.count  %>)</h3>
+        <% end %>
       </div>
       <div class="review-wrap">
         <% if @mentor.reviews.blank? %>
