@@ -9,7 +9,7 @@
     <%= f.submit "Add Preparation", :class => "main-button" %>
   <% end %>
   <hr>
-<% end %>
 <% @consultation.topics.each do |topic| %>
   <%= topic.checked %><li><%= topic.title %></li>
+<% end %>
 <% end %>
