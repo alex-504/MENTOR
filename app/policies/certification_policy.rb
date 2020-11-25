@@ -6,7 +6,7 @@ class CertificationPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    create?
   end
 
   def show?
@@ -14,7 +14,7 @@ class CertificationPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    record.mentor.user == user
   end
 
   def edit?

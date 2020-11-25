@@ -10,11 +10,11 @@ class ConsultationPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    record.user == user || record.mentor.user == user
   end
 
   def show?
-    true
+    record.user == user || record.mentor.user == user
   end
 
 end
