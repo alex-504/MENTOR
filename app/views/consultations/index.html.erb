@@ -13,9 +13,18 @@
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade " id="all" role="tabpanel" aria-labelledby="home-tab"><%= render "consultations_all" %></div>
-      <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab"><%= render "upcoming_consultations" %></div>
-      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><%= render "past_consultations" %></div>
+      <div class="tab-pane fade " id="all" role="tabpanel" aria-labelledby="home-tab">
+        <% if @consultations.empty? %>
+          <p>No consultation yet.</p>
+        <% else %>
+          <%= render "consultations_all" %>
+        <% end %>
+      </div>
+      <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <%= render "upcoming_consultations" %>
+      </div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><%= render "past_consultations" %>
+      </div>
     </div>
   </div>
 </div>

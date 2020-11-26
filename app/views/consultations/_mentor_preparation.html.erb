@@ -1,7 +1,5 @@
 <div class="my-3">
-  <h5>Preparation</h5>
 </div>
-<hr>
 <% if @consultation.mentor.user == current_user %>
   <%= simple_form_for [@consultation, @topic]  do |f| %>
     <%= f.input :title, label: "Content" %>
@@ -11,5 +9,6 @@
   <hr>
 <% end %>
 <% @consultation.topics.each do |topic| %>
-  <%= topic.checked %><li><%= topic.title %></li>
+  <%= topic.checked %>
+  <li><%= topic.title %></li>
 <% end %>

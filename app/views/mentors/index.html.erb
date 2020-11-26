@@ -45,7 +45,7 @@
             </div>
           </div>
           <div class="mentor-price">
-            <p><span>¥<%= mentor.price %></span>/30min</p>
+            <p><span>¥<%#= mentor.price %><%= number_with_delimiter(mentor.price, delimiter: ',') %></span>/30min</p>
           </div>
           <div class="mentor-tag">
             <% mentor.tags.each do |tag| %>
