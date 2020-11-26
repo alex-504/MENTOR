@@ -2,6 +2,7 @@ class ConsultationsController < ApplicationController
 
   def index
     @consultations = policy_scope(Consultation).order(created_at: :desc)
+
   end
 
   def show

@@ -1,7 +1,7 @@
 <% @consultations.each do |consultation| %>
   <% price = consultation.duration / 30 %>
   <% total_price = price * consultation.mentor.price %>
-  <% if consultation.start_time < Time.now  %>
+  <% if consultation.start_time < Time.now %>
     <div class="consultation-card">
       <div class="consultation-top-wrap">
         <div class="profile-avatar">

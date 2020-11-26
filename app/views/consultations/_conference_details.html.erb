@@ -1,7 +1,5 @@
 <div class="pt-3">
-  <h5>Consultation details</h5>
 </div>
-<hr>
 <p>
   <h2><%= @consultation.start_time&.strftime("%b %e, %l:%M %p") %></h2>
 </p>
@@ -17,11 +15,9 @@
 <p><strong>Mentee: </strong><%= @consultation.user.name %></p>
 <!-- <p><strong>Desription: </strong><%#= @consultation.mentor.description %></p>
 <p><strong>Status: </strong><%#= @consultation.status %></p> -->
-
 <hr>
 <p>To start the call, please use your <strong>'Room Name' 👈</strong>:</p>
 <h2 id="room-name"><%= @consultation.room_name %></h2>
 <script src="room_code_generator"></script>
 <hr>
-
 <!-- <p>Total: <span class="price">¥<%= total_price %></span></p> -->
