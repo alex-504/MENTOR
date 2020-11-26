@@ -93,6 +93,7 @@
   padding: 24px 16px;
   margin: 16px 0 80px 0;
   box-shadow: 0 3px 8px 0 rgba(0,0,0,0.09);
+  background-color: #fff;
 }
 
 .booking-details {
@@ -128,7 +129,7 @@
 
 #total {
   font-size: 24px;
-  background-color: #e1f5fb;
+  background-color: #f6f7f6;
   text-align: center;
   padding: 16px 0;
   margin: 0;
@@ -148,7 +149,7 @@
 }
 
 #bd-title {
-  background-color: #e1f5fb;
+  background-color: #f6f7f6;
   padding: 16px 0;
   text-align: center;
   margin: 0;
@@ -157,7 +158,7 @@
 
 #bd-details {
   flex-grow: 1;
-  background-color: #e1f5fb4a;
+  background-color: #fff;
 }
 
 .select2-filter {
