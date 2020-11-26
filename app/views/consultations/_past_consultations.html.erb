@@ -1,0 +1,52 @@
+<% @consultations.each do |consultation| %>
+  <% price = consultation.duration / 30 %>
+  <% total_price = price * consultation.mentor.price %>
+  <% if consultation.start_time < Time.now  %>
+    <div class="consultation-card">
+      <div class="consultation-top-wrap">
+        <div class="profile-avatar">
+          <%  if consultation.mentor.user.photo.attached? %>
+            <%= cl_image_tag consultation.mentor.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
+          <% else %>
+            <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+          <% end %>
+          <%# <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large"> %>
+          <h5><%= consultation.mentor.user.name%></h5>
+        </div>
+        <div class="consultation-info">
+          <ul>
+            <li><span>Start time: </span><%= consultation.start_time&.strftime("%b %e, %l:%M %p") %></li>
+            <li><span>Concerns: </span><%= consultation.details %></li>
+            <li><span>Duration: </span><%= consultation.duration %> minutes</li>
+            <li>
+              <div class="row topics">
+                <span>Topics: </span>
+                <% consultation.tags.each do |tag| %>
+                  <p class="tag"><%= tag.name %></p>
+                <% end %>
+              </div>
+            </li>
+            <li><span>Price/30min: </span>¥<%= consultation.mentor.price%></li>
+          </ul>
+        </div>
+        <div class="consultation-buttons">
+          <div>
+            <% if consultation.status == "Pending" %>
+              <p class="third-button"><%= consultation.status %> </p>
+            <% elsif consultation.status == "Rejected" %>
+              <p class="red-button"><%= consultation.status %> </p>
+            <% else %>
+              <p class="green-button"><%= consultation.status %> </p>
+            <% end %>
+          </div>
+          <div>
+            <h6>Total: ¥<%= total_price %> </h6>
+            <% if consultation.status == "Accepted" %>
+              <%= link_to "Go To Room", consultation_path(consultation), class: "main-button" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

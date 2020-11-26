@@ -1,4 +1,4 @@
-<div class="container padding-top">
+<div class="mentors-container padding-top">
   <div class="search-box">
     <h2 class="mentors-title">Find Mentors by Expertise</h2>
     <%= form_tag(mentors_path, method: :get) do %>
@@ -10,7 +10,6 @@
           <%= submit_tag "Search", class: "main-button"  %>
         </div>
       </div>
-
     <% end %>
   </div>
   <div class="card-grid">
@@ -25,19 +24,25 @@
                 <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
               <% end %>
             </div>
-            <h6><%= mentor.user.name %></h6>
+            <h5><%= mentor.user.name %></h5>
             <p><%= mentor.title %></p>
-            <% if mentor.consultations.count > 0 %>
-              <p><%= mentor.consultations.count %> Consultations</p>
-            <% end %>
           </div>
-          <div class="stars">
-            <% mentor.average_rating.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-            <% (5 - mentor.average_rating).times do %>
-              <i class="far fa-star"></i>
-            <% end  %>
+          <div class="stars d-flex">
+            <div>
+              <% mentor.average_rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - mentor.average_rating).times do %>
+                <i class="far fa-star"></i>
+              <% end  %>
+            </div>
+            <div>
+              <% if mentor.consultations.count > 0 %>
+                <p>&nbsp;( <%= mentor.consultations.count %> Consultations )</p>
+              <% else %>
+                <br>
+              <% end %>
+            </div>
           </div>
           <div class="mentor-price">
             <p><span>¥<%= mentor.price %></span>/30min</p>
