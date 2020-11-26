@@ -47,22 +47,22 @@ file = URI.open('https://avatars1.githubusercontent.com/u/62379462?s=460&u=f1054
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
-mentor = Mentor.create!(
-  user: user,
-  description: "I specialize in Full-Stack Web Development",
-  price: Faker::Number.decimal_part(digits: 5),
-  availability: ["weekdays", "weekends"].sample,
-  title: "Founder of MentorHub and Moovers",
-)
-full_stack_tags = ["Full-Stack Development","Web Development"]
-full_stack_tags.each do |name|
-  tag = Tag.where(name: name).first_or_create
-  MentorTag.create(
-    mentor: mentor,
-    tag: tag
-  )
-end
-mentors << mentor
+# mentor = Mentor.create!(
+#   user: user,
+#   description: "I specialize in Full-Stack Web Development",
+#   price: Faker::Number.decimal_part(digits: 5),
+#   availability: ["weekdays", "weekends"].sample,
+#   title: "Founder of MentorHub and Moovers",
+# )
+# full_stack_tags = ["Full-Stack Development","Web Development"]
+# full_stack_tags.each do |name|
+#   tag = Tag.where(name: name).first_or_create
+#   MentorTag.create(
+#     mentor: mentor,
+#     tag: tag
+#   )
+# end
+# mentors << mentor
 
 
 user = User.create!(
@@ -249,7 +249,7 @@ user = User.create!(
   name: "Caroline Whitlock",
   email: "caroline.whitlock@gmail.com",
   password: "password",
-  role: "Junior Administrative Support Coordinator at Salesforce",
+  role: "Junior Support Coordinator at Salesforce",
   linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://i.pravatar.cc/150?img=48')
@@ -261,7 +261,7 @@ mentor = Mentor.create!(
   description: "I have been at Salesforce as a Junior Administrative Support Coordinator for 3 years",
   price: Faker::Number.decimal_part(digits: 5),
   availability: ["weekdays", "weekends"].sample,
-  title: "Junior Administrative Support Coordinator at Salesforce",
+  title: "Junior Support Coordinator at Salesforce",
 )
 administration_tags = ["Administration", "Sales","Software Development", "IT"]
 administration_tags.each do |name|
@@ -277,7 +277,7 @@ user = User.create!(
   name: "Audrey Trevino",
   email: "audrey.trevino@gmail.com",
   password: "password",
-  role: "Full Stack Developer at Atlantic Bay Morgage Group",
+  role: "Full Stack Developer at Bay Morgage Group",
   linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://i.pravatar.cc/150?img=47')
@@ -289,7 +289,7 @@ mentor = Mentor.create!(
   description: "I have been at Atlantic Bay Morgage Group as a full stack dev for 3 years",
   price: Faker::Number.decimal_part(digits: 5),
   availability: ["weekdays", "weekends"].sample,
-  title: "Full Stack Developer at Atlantic Bay Morgage Grou",
+  title: "Full Stack Developer at  Bay Morgage Grou",
 )
 full_stack_tags = ["Full-Stack Developer", "Law", "Data Science"]
 full_stack_tags.each do |name|
