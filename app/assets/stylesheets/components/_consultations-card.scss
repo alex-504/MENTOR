@@ -3,6 +3,7 @@
   border-radius: 16px;
   margin: 24px 0;
   box-shadow: 0 2px 4px rgba(8,8,61,.1);
+  background-color: #ffffff;
 }
 
 .consultation-card:hover {
@@ -106,6 +107,9 @@
     margin-left: 8px;
   }
 }
+.consultations-board {
+  margin-bottom: 120px;
+}
 
 .consultations-board-card {
   border: 1px solid #eeeeee;
@@ -117,6 +121,7 @@
   min-height: 200px;
   padding: 16px 16px 8px 16px;
   box-shadow: 0 2px 4px rgba(8,8,61,.1);
+  background-color: #ffffff;
 
   .info {
     flex-grow: 1;

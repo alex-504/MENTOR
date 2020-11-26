@@ -4,7 +4,7 @@
   color: #fff;
   padding: 8px 16px;
   border: 1px solid #23585e;
-  margin: 4px;
+  // margin: 4px;
 }
 
 .main-button:hover {
@@ -27,28 +27,31 @@
 }
 
 .third-button {
-  background-color: #f46523;
+  background-color: #f46523c9;
   border-radius: 24px;
   color: #fff;
   padding: 4px 16px;
-  border: 1px solid #f46523;
+  border: 1px solid #f46523c9;
   margin: 4px;
+  font-weight: 500;
 }
 
 .green-button {
-  background-color: #0eb91d;
+  background-color: #0eb91db8;
   border-radius: 24px;
   color: #fff;
   padding: 4px 16px;
-  border: 1px solid #0eb91d;
+  border: 1px solid #0eb91db8;
   margin: 4px;
+  font-weight: 500;
 }
 
 .red-button {
-  background-color: red;
+  background-color: #ff0000c2;
   border-radius: 24px;
   color: #fff;
   padding: 4px 16px;
-  border: 1px solid red;
+  border: 1px solid #ff0000c2;
   margin: 4px;
+  font-weight: 500;
 }
