@@ -36,7 +36,7 @@
       </div>
       <div class="row">
         <% if consultation.status == "Accepted" %>
-          <%= link_to "GoTo Room", consultation_path(consultation), class: 'main-button' %>
+          <%= link_to "Go To Room", consultation_path(consultation), class: 'main-button' %>
         <% end %>
         <% if consultation.status == "Pending" %>
           <%= simple_form_for consultation do |f| %>

@@ -1,5 +1,5 @@
 meta_product_name: "MentorHub"
 meta_title: "MentorHub - Personal Growth Made Easy"
 meta_description: "A streamlined app that simplifies the process of forming strong, meaningful relationships between mentors and mentees"
-meta_image: "mentor-photo.png" # should exist in `app/assets/images/`
+meta_image: "meta-photo.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
