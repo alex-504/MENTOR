@@ -63,7 +63,7 @@
     <div class="reviews">
       <div  id="reviews">
         <% if @mentor.reviews.count == 0 %>
-          <p></p>
+          <h3>No Reviews yet</h3>
         <% else %>
           <h3>Reviews(<%= @mentor.reviews.count  %>)</h3>
         <% end %>

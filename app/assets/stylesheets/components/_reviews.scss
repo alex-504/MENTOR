@@ -1,5 +1,8 @@
 .reviews {
   margin-bottom: 80px;
+    h3 {
+      color: black;
+    }
 }
 
 .review-wrap {
@@ -20,6 +23,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 80px;
 
 }
 
@@ -27,6 +31,7 @@
   padding-left: 40px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
 }
 
