@@ -118,7 +118,15 @@ a:link {
     border-radius: 16px;
     margin: 16px 24px;
     text-align: center;
-}
+  }
+
+  .navbar-nav {
+    align-items: flex-end;
+
+    .second-button {
+      display: none;
+    }
+  }
 
 }
 
