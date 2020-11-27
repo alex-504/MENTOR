@@ -38,7 +38,7 @@
             <p class="green-button"><%= consultation.status %> </p>
           <% end %>
         </div>
-        <div>
+        <div class="bottom-btn">
           <h6>Total: ¥<%= number_with_delimiter(total_price, delimiter: ',') %> </h6>
           <% if consultation.status == "Accepted" %>
             <%= link_to "Go To Room", consultation_path(consultation), class: "main-button" %>

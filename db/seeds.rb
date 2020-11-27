@@ -128,9 +128,9 @@ end
     rating: 5,
     mentor: mentor,
     user: User.all.where(user != mentor.user).sample
-    )
+  )
   mentors << mentor
-  end
+end
 
 
 user = User.create!(
@@ -165,11 +165,9 @@ end
     rating: 5,
     mentor: mentor,
     user: User.all.where(user != mentor.user).sample
-    )
+  )
   mentors << mentor
-  end
-
-
+end
 
 
 user = User.create!(
@@ -200,46 +198,50 @@ accounting_tags.each do |name|
   )
 end
 10.times do
-review = Review.create!(
-  content:"I had a fantastic session. Thank you so much",
-  rating: 5,
-  mentor: mentor,
-  user: User.all.where(user != mentor.user).sample
+  review = Review.create!(
+    content:"I had a fantastic session. Thank you so much",
+    rating: 5,
+    mentor: mentor,
+    user: User.all.where(user != mentor.user).sample
   )
-mentors << mentor
+  mentors << mentor
 end
 
 user = User.create!(
-  name: "Aline Sakamoto Utiyama",
-  email: "as.utiyama@gmail.com",
+  name: "Noemi Ashizuka",
+  email: "noemi@me.com",
   password: "password",
-  role:  "CEO, AMORA",
-  linkedin_url: Faker::Internet.email,
+  role: "Full-stack Web Developer",
+  linkedin_url: "https://www.linkedin.com/in/salvina-noemi-calanducci/",
 )
-file = URI.open('https://avatars1.githubusercontent.com/u/29885178?s=460&u=f669e929fc2a4853bc7dcd2de15cf03370608cda&v=4')
+file = URI.open('https://media-exp1.licdn.com/dms/image/C5603AQHdrjYJyt07dA/profile-displayphoto-shrink_800_800/0/1584181248302?e=1611792000&v=beta&t=8Qftiit8X7nwZgpJV-bUc9XBEH03N5gyF9RUbwM05g0')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
 mentor = Mentor.create!(
   user: user,
-  description: "I have been working with an e-commerce for more than 5 years, starting from ¥200,000 up
-  to ¥27,000,000 of revenue a year. I would be very happy to share all the strategies you
-  need to build a successful e-commerce company.",
-  price: 3500,
-  availability: ["weekdays", "weekends"].sample,
-  title: "CEO, AMORA",
+  description: "I completed the 9 weeks Le Wagon coding bootcamp and I have been working as a freelance developer since graduation. I have many years of experience in the education field, having worked as a private tutor in London and as a business English instructor in Tokyo. Check my portfolio website https://www.noemi-ashizuka.com/ ",
+  price: 5000,
+  availability: "Sundays",
+  title: "Full-stack Web Developer",
 )
-full_stack_tags = ["Shopify", "E-commerce", "Facebook Marketing", "Management"]
-full_stack_tags.each do |name|
+front_end_tags = ["Full-Stack Web Development", "Data Science"]
+front_end_tags.each do |name|
   tag = Tag.where(name: name).first_or_create
   MentorTag.create(
     mentor: mentor,
     tag: tag
   )
 end
-mentors << mentor
-
-
+10.times do
+  review = Review.create!(
+    content:"I had a fantastic session. Thank you so much",
+    rating: 5,
+    mentor: mentor,
+    user: User.all.where(user != mentor.user).sample
+  )
+  mentors << mentor
+end
 
 user = User.create!(
   name: "Trouni Tiet",
@@ -261,7 +263,7 @@ mentor = Mentor.create!(
   availability: ["weekdays", "weekends"].sample,
   title: "Entrepreneur, Machine Learning Instructor, Full Stack Developer.",
 )
-customer_care_tags = ["Machine Learning", "Data Science", "Full-Stack Web Development", "Entrepreneurship"]
+customer_care_tags = ["Machine Learning", "Data Science", "Entrepreneurship"]
 customer_care_tags.each do |name|
   tag = Tag.where(name: name).first_or_create
   MentorTag.create(
@@ -275,7 +277,45 @@ end
     rating: 5,
     mentor: mentor,
     user: User.all.where(user != mentor.user).sample
-    )
+  )
+  mentors << mentor
+end
+
+user = User.create!(
+  name: "Aline Sakamoto Utiyama",
+  email: "as.utiyama@gmail.com",
+  password: "password",
+  role:  "CEO, AMORA",
+  linkedin_url: Faker::Internet.email,
+)
+file = URI.open('https://avatars1.githubusercontent.com/u/29885178?s=460&u=f669e929fc2a4853bc7dcd2de15cf03370608cda&v=4')
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+users << user
+
+mentor = Mentor.create!(
+  user: user,
+  description: "I have been working with an e-commerce for more than 5 years, starting from ¥200,000 up
+  to ¥27,000,000 of revenue a year. I would be very happy to share all the strategies you
+  need to build a successful e-commerce company.",
+  price: 4500,
+  availability: ["weekdays", "weekends"].sample,
+  title: "CEO, AMORA",
+)
+full_stack_tags = ["Shopify", "E-commerce", "Facebook Marketing", "Management"]
+full_stack_tags.each do |name|
+  tag = Tag.where(name: name).first_or_create
+  MentorTag.create(
+    mentor: mentor,
+    tag: tag
+  )
+end
+10.times do
+  review = Review.create!(
+    content:"I had a fantastic session. Thank you so much",
+    rating: 5,
+    mentor: mentor,
+    user: User.all.where(user != mentor.user).sample
+  )
   mentors << mentor
 end
 
@@ -298,7 +338,7 @@ mentor = Mentor.create!(
   availability: ["weekdays", "weekends"].sample,
   title: "Consultant - Healthcare at Atikus Consulting K.K., Full-Stack Web Developer",
 )
-customer_care_tags = ["Consulting", "Healthcare", "Full-Stack Web Development"]
+customer_care_tags = ["Consulting", "Healthcare", "Facebook Marketing", "Full-Stack Web Development"]
 customer_care_tags.each do |name|
   tag = Tag.where(name: name).first_or_create
   MentorTag.create(
@@ -312,7 +352,7 @@ end
     rating: 5,
     mentor: mentor,
     user: User.all.where(user != mentor.user).sample
-    )
+  )
   mentors << mentor
 end
 
@@ -348,7 +388,7 @@ end
     rating: 5,
     mentor: mentor,
     user: User.all.where(user != mentor.user).sample
-    )
+  )
   mentors << mentor
 end
 
@@ -384,11 +424,9 @@ end
     rating: 5,
     mentor: mentor,
     user: User.all.where(user != mentor.user).sample
-    )
+  )
   mentors << mentor
 end
-
-
 
 
 
@@ -411,7 +449,7 @@ mentor = Mentor.create!(
   availability: ["weekdays", "weekends"].sample,
   title: "Operation Manager at OYO",
 )
-customer_care_tags = ["IT", "Communications"]
+customer_care_tags = ["IT", "Communications", "Facebook Marketing"]
 customer_care_tags.each do |name|
   tag = Tag.where(name: name).first_or_create
   MentorTag.create(
@@ -425,7 +463,7 @@ end
     rating: 5,
     mentor: mentor,
     user: User.all.where(user != mentor.user).sample
-    )
+  )
   mentors << mentor
 end
 
@@ -464,142 +502,142 @@ end
     rating: 5,
     mentor: mentor,
     user: User.all.where(user != mentor.user).sample
-    )
+  )
   mentors << mentor
 end
 
 
+user = User.create!(
+  name: "Takuhei Mizutani",
+  email: "taku.mizutani@yahoo.com",
+  password: "password",
+  role: "Full-Stack Web Developer at Syncalyst",
+  linkedin_url: "linkedin.com/",
+)
+file = URI.open('https://avatars0.githubusercontent.com/u/67130385?v=4')
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+users << user
+
+mentor = Mentor.create!(
+  user: user,
+  description: "I joined LeWagon to get a step in the tech sector and to gain skills that would allow me to work anywhere in the world. I'm Japanese but grew up abroad and worked in Malaysia doing customer service for a company in the travel industry before joining. Excited to start but nervous about keeping up with the bootcamp!",
+  price: 4000,
+  availability: ["weekdays", "weekends"].sample,
+  title: "Full-Stack Web Developer at Syncalyst",
+)
+customer_care_tags = ["Facebook Marketing","Full-Stack Web Developer"]
+customer_care_tags.each do |name|
+  tag = Tag.where(name: name).first_or_create
+  MentorTag.create(
+    mentor: mentor,
+    tag: tag
+  )
+end
+mentors << mentor
+
+
+
+
+
+
+
+
+
+
+
+user = User.create!(
+  name: "Caroline Whitlock",
+  email: "caroline.whitlock@gmail.com",
+  password: "password",
+  role: "Junior Support Coordinator at Salesforce",
+  linkedin_url: Faker::Internet.email,
+)
+file = URI.open('https://i.pravatar.cc/150?img=48')
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+users << user
+
+mentor = Mentor.create!(
+  user: user,
+  description: "I have been at Salesforce as a Junior Administrative Support Coordinator for 3 years",
+  price: 4200,
+  availability: ["weekdays", "weekends"].sample,
+  title: "Junior Support Coordinator at Salesforce",
+)
+administration_tags = ["Administration", "Sales", "Facebook Marketing",]
+administration_tags.each do |name|
+  tag = Tag.where(name: name).first_or_create
+  MentorTag.create(
+    mentor: mentor,
+    tag: tag
+  )
+end
+mentors << mentor
+
+user = User.create!(
+  name: "Audrey Trevino",
+  email: "audrey.trevino@gmail.com",
+  password: "password",
+  role: "Full Stack Developer at Bay Morgage Group",
+  linkedin_url: Faker::Internet.email,
+)
+file = URI.open('https://i.pravatar.cc/150?img=47')
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+users << user
+
+mentor = Mentor.create!(
+  user: user,
+  description: "I have been at Bay Morgage Group as a full stack dev for 3 years",
+  price: 3800,
+  availability: ["weekdays", "weekends"].sample,
+  title: "Full Stack Developer at  Bay Morgage Grou",
+)
+full_stack_tags = ["Full-Stack Developer", "Facebook Marketing"]
+full_stack_tags.each do |name|
+  tag = Tag.where(name: name).first_or_create
+  MentorTag.create(
+    mentor: mentor,
+    tag: tag
+  )
+end
+mentors << mentor
+
+
+user = User.create!(
+  name: "Katherine Langston",
+  email: "katherine.langston@gmail.com",
+  password: "password",
+  role: 'Head Manager at Weber Shandwick',
+  linkedin_url: Faker::Internet.email,
+)
+file = URI.open('https://i.pravatar.cc/150?img=45')
+user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+users << user
+
+mentor = Mentor.create!(
+  user: user,
+  description: "I have been head manager at Weber Shandwick for 3 years",
+  price: 3500,
+  availability: ["weekdays", "weekends"].sample,
+  title: "Head of Management at Weber Shandwick",
+)
+management_tags = ["Management", "Startups", "Education", "Facebook Marketing"]
+management_tags.each do |name|
+  tag = Tag.where(name: name).first_or_create
+  MentorTag.create(
+    mentor: mentor,
+    tag: tag
+  )
+end
+mentors << mentor
+
 # user = User.create!(
-#   name: "Takuhei Mizutani",
-#   email: "taku.mizutani@yahoo.com",
+#   name: "John",
+#   email: "John.Katz@gmail.com",
 #   password: "password",
-#   role: "",
-#   linkedin_url: "",
-# )
-# file = URI.open('https://avatars0.githubusercontent.com/u/67130385?v=4')
-# user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# users << user
-
-# mentor = Mentor.create!(
-#   user: user,
-#   description: "",
-#   price: 4000,
-#   availability: ["weekdays", "weekends"].sample,
-#   title: "",
-# )
-# customer_care_tags = ["","Full-Stack Web Developer"]
-# customer_care_tags.each do |name|
-#   tag = Tag.where(name: name).first_or_create
-#   MentorTag.create(
-#     mentor: mentor,
-#     tag: tag
-#   )
-# end
-# mentors << mentor
-
-
-
-
-
-
-
-
-
-
-
-# user = User.create!(
-#   name: "Caroline Whitlock",
-#   email: "caroline.whitlock@gmail.com",
-#   password: "password",
-#   role: "Junior Support Coordinator at Salesforce",
+#   role:  "Senior Front End Web Developer",
 #   linkedin_url: Faker::Internet.email,
 # )
-# file = URI.open('https://i.pravatar.cc/150?img=48')
-# user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# users << user
-
-# mentor = Mentor.create!(
-#   user: user,
-#   description: "I have been at Salesforce as a Junior Administrative Support Coordinator for 3 years",
-#   price: Faker::Number.decimal_part(digits: 5),
-#   availability: ["weekdays", "weekends"].sample,
-#   title: "Junior Support Coordinator at Salesforce",
-# )
-# administration_tags = ["Administration", "Sales","Software Development",]
-# administration_tags.each do |name|
-#   tag = Tag.where(name: name).first_or_create
-#   MentorTag.create(
-#     mentor: mentor,
-#     tag: tag
-#   )
-# end
-# mentors << mentor
-
-# user = User.create!(
-#   name: "Audrey Trevino",
-#   email: "audrey.trevino@gmail.com",
-#   password: "password",
-#   role: "Full Stack Developer at Bay Morgage Group",
-#   linkedin_url: Faker::Internet.email,
-# )
-# file = URI.open('https://i.pravatar.cc/150?img=47')
-# user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# users << user
-
-# mentor = Mentor.create!(
-#   user: user,
-#   description: "I have been at Bay Morgage Group as a full stack dev for 3 years",
-#   price: Faker::Number.decimal_part(digits: 5),
-#   availability: ["weekdays", "weekends"].sample,
-#   title: "Full Stack Developer at  Bay Morgage Grou",
-# )
-# full_stack_tags = ["Full-Stack Developer", "Law"]
-# full_stack_tags.each do |name|
-#   tag = Tag.where(name: name).first_or_create
-#   MentorTag.create(
-#     mentor: mentor,
-#     tag: tag
-#   )
-# end
-# mentors << mentor
-
-
-# user = User.create!(
-#   name: "Katherine Langston",
-#   email: "katherine.langston@gmail.com",
-#   password: "password",
-#   role: 'Head Manager at Weber Shandwick',
-#   linkedin_url: Faker::Internet.email,
-# )
-# file = URI.open('https://i.pravatar.cc/150?img=45')
-# user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-# users << user
-
-# mentor = Mentor.create!(
-#   user: user,
-#   description: "I have been head manager at Weber Shandwick for 3 years",
-#   price: Faker::Number.decimal_part(digits: 5),
-#   availability: ["weekdays", "weekends"].sample,
-#   title: "Head of Management at Weber Shandwick",
-# )
-# management_tags = ["Management", "Startups", "Education", "Marketing"]
-# management_tags.each do |name|
-#   tag = Tag.where(name: name).first_or_create
-#   MentorTag.create(
-#     mentor: mentor,
-#     tag: tag
-#   )
-# end
-# mentors << mentor
-
-# user = User.create!(
-#   name: "Aline Sakamoto Utiyama",
-#   email: "as.utiyama@gmail.com",
-#   password: "password",
-#   role:  "Founder of MentorHub and Moovers",
-#   linkedin_url: Faker::Internet.email,
-# )
-# file = URI.open('https://avatars1.githubusercontent.com/u/29885178?s=460&u=f669e929fc2a4853bc7dcd2de15cf03370608cda&v=4')
+# file = URI.open('https://i.pravatar.cc/150?img=33')
 # user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 # users << user
 
@@ -608,15 +646,15 @@ end
 #   description: "I specialize in Full-Stack Web Development",
 #   price: Faker::Number.decimal_part(digits: 5),
 #   availability: ["weekdays", "weekends"].sample,
-#   title: "Founder of MentorHub and Moovers",
+#   title: "Senior Front End Web Developer",
 # )
-# full_stack_tags = ["Full-Stack Development","Web Development"]
+# full_stack_tags = [ "Web Development", "Facebook Marketing"]
 # full_stack_tags.each do |name|
 #   tag = Tag.where(name: name).first_or_create
 #   MentorTag.create(
 #     mentor: mentor,
 #     tag: tag
-#     )
+#   )
 # end
 # mentors << mentor
 
