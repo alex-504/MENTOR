@@ -12,6 +12,9 @@
             <%= f.submit 'Submit',  class: 'main-button' %>
           <% end %>
         <% end %>
+        <div class="end-link">
+          <p><i class="fas fa-medal"></i> You got a new endorsement from <%= @mentor.user.name.split.first %>! <%= link_to "Check here", user_path(current_user) %> </p>
+        </div>
       </div>
     </div>
     <div class="booking-tab">
