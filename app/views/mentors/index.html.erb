@@ -1,4 +1,4 @@
-<div class="mentors-container padding-top">
+<div class="mentors-container padding-top col-xs-12">
   <div class="search-box">
     <h2 class="mentors-title">Find Mentors by Expertise</h2>
     <%= form_tag(mentors_path, method: :get) do %>
@@ -13,47 +13,51 @@
     <% end %>
   </div>
   <div class="card-grid">
-    <% @mentors.each do |mentor| %>
-      <%= link_to mentor_path(mentor) do %>
-        <div class="mentor-cards">
-          <div class="">
-            <div class="">
-              <%  if mentor.user.photo.attached? %>
-                <%= cl_image_tag mentor.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
-              <% else %>
-                <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
-              <% end %>
+    <div class="d-flex flex-wrap align-content-center justify-content-between">
+      <% @mentors.each do |mentor| %>
+        <div class="columns ">
+          <%= link_to mentor_path(mentor) do %>
+            <div class="mentor-cards">
+              <div class="">
+                <div class="">
+                  <%  if mentor.user.photo.attached? %>
+                    <%= cl_image_tag mentor.user.photo.key, alt: "avatar-large", class: "avatar-large" %>
+                  <% else %>
+                    <img src="https://image.flaticon.com/icons/png/512/194/194937.png" alt="avatar-large" class="avatar-large">
+                  <% end %>
+                </div>
+                <h5><%= mentor.user.name %></h5>
+                <p><%= mentor.title %></p>
+              </div>
+              <div class="stars d-flex">
+                <div>
+                  <% mentor.average_rating.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% (5 - mentor.average_rating).times do %>
+                    <i class="far fa-star"></i>
+                  <% end  %>
+                </div>
+                <div>
+                  <% if mentor.consultations.count > 0 %>
+                    <p>&nbsp;( <%= mentor.consultations.count %> Consultations )</p>
+                  <% else %>
+                    <br>
+                  <% end %>
+                </div>
+              </div>
+              <div class="mentor-price">
+                <p><span>¥<%#= mentor.price %><%= number_with_delimiter(mentor.price, delimiter: ',') %></span>/30min</p>
+              </div>
+              <div class="mentor-tag">
+                <% mentor.tags.each do |tag| %>
+                  <p class="tag"><%= tag.name %></p>
+                <% end %>
+              </div>
             </div>
-            <h5><%= mentor.user.name %></h5>
-            <p><%= mentor.title %></p>
-          </div>
-          <div class="stars d-flex">
-            <div>
-              <% mentor.average_rating.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-              <% (5 - mentor.average_rating).times do %>
-                <i class="far fa-star"></i>
-              <% end  %>
-            </div>
-            <div>
-              <% if mentor.consultations.count > 0 %>
-                <p>&nbsp;( <%= mentor.consultations.count %> Consultations )</p>
-              <% else %>
-                <br>
-              <% end %>
-            </div>
-          </div>
-          <div class="mentor-price">
-            <p><span>¥<%#= mentor.price %><%= number_with_delimiter(mentor.price, delimiter: ',') %></span>/30min</p>
-          </div>
-          <div class="mentor-tag">
-            <% mentor.tags.each do |tag| %>
-              <p class="tag"><%= tag.name %></p>
-            <% end %>
-          </div>
+          <% end %>
         </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

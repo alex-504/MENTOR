@@ -10,7 +10,7 @@
       <div class="user-main-info">
         <h4><%= @mentor.user.name %></h4>
         <p><%= @mentor.title %></p>
-        <p>Consultations: <%= @mentor.consultations.count %></p>
+        <!-- <p>Consultations: <%= @mentor.consultations.count %></p> -->
         <div class="stars">
           <% @mentor.average_rating.times do %>
             <i class="fas fa-star"></i>
@@ -18,10 +18,10 @@
           <% (5 - @mentor.average_rating).times do %>
             <i class="far fa-star"></i>
           <% end %>
-          <%= link_to "Reviews(#{ @mentor.reviews.count })", "#reviews" %>
-          <a data-toggle="tab" href="#reviews" role="tab" aria-controls="profile"
-          aria-selected="false">Reviews</a>
+          <%= link_to "Reviews(#{ @mentor.reviews.count })", "#", id: 'all-reviews' %>
+          <%#= link_to "Reviews(#{ @mentor.reviews.count })", "#reviews" %>
         </div>
+        <%= link_to "#{ @mentor.consultations.count } Consultations ", "#", id: 'all-consultations' %>
       </div>
     </div>
     <div>
