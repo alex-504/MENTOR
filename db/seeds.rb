@@ -40,7 +40,7 @@ user = User.create!(
   name: "Alexandre Battiste Vieira",
   email: "alexandre.ealimentos@gmail.com",
   password: "password",
-  role: "Founder of MentorHub and Moovers",
+  role: "Founder of Moovers",
   linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://avatars1.githubusercontent.com/u/62379462?s=460&u=f10545a0baecb4a6f0f4709df0ec7b543bb64d35&v=4')
@@ -52,7 +52,7 @@ users << user
 #   description: "I specialize in Full-Stack Web Development",
 #   price: Faker::Number.decimal_part(digits: 5),
 #   availability: ["weekdays", "weekends"].sample,
-#   title: "Founder of MentorHub and Moovers",
+#   title: "Founder of MentorHub",
 # )
 # full_stack_tags = ["Full-Stack Development","Web Development"]
 # full_stack_tags.each do |name|
@@ -78,10 +78,10 @@ users << user
 
 mentor = Mentor.create!(
   user: user,
-  description: "I have been working with e-commerce for more than 5 years, starting from ¥200.000 up
-  to ¥27.000.000 of revenue a year. I would be realy happy to share with you all the strategies you
+  description: "I have been working with an e-commerce for more than 5 years, starting from ¥200.000 up
+  to ¥27.000.000 of revenue a year. I would be very happy to share all the strategies you
   need to build a successful e-commerce company.",
-  price: 5000,
+  price: 3500,
   availability: ["weekdays", "weekends"].sample,
   title: "CEO, AMORA",
 )
@@ -101,29 +101,29 @@ user = User.create!(
   name: "Sho Neriki",
   email: "ikirenohs@gmail.com",
   password: "password",
-  role: "Founder of MentorHub and Moovers",
+  role: "Founder at JapanEntrepreneurs",
   linkedin_url: Faker::Internet.email,
 )
 file = URI.open('https://avatars2.githubusercontent.com/u/34837760?s=400&u=a0bb771119ebf84930f7effb715346d792c6ef6c&v=4')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
-# mentor = Mentor.create!(
-#   user: user,
-#   description: "I specialize in Full-Stack Web Development",
-#   price: Faker::Number.decimal_part(digits: 5),
-#   availability: ["weekdays", "weekends"].sample,
-#   title: "Founder of MentorHub and Moovers",
-# )
-# full_stack_tags = ["Full-Stack Development","Web Development"]
-# full_stack_tags.each do |name|
-#   tag = Tag.where(name: name).first_or_create
-#   MentorTag.create(
-#     mentor: mentor,
-#     tag: tag
-#   )
-# end
-# mentors << mentor
+mentor = Mentor.create!(
+  user: user,
+  description: "As a founder at JapanEntrepreneurs, I had to make a lot of decisions, daily. This became exhausting, especially if I had multiple ideas on how to do something, but wasn't sure what to choose. Moments like these have inspired me to help people in similar situations. Does this resonate with you? If so, I'd love to help you.",
+  price: 5000,
+  availability: ["weekdays", "weekends"].sample,
+  title: "Founder at JapanEntrepreneurs",
+)
+full_stack_tags = ["Consulting", "Sales", "Startups", "Management"]
+full_stack_tags.each do |name|
+  tag = Tag.where(name: name).first_or_create
+  MentorTag.create(
+    mentor: mentor,
+    tag: tag
+  )
+end
+mentors << mentor
 
 user = User.create!(
   name: "John Katz",
