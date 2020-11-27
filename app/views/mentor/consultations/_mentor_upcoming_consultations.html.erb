@@ -35,7 +35,7 @@
             <p class="green-button"><%= consultation.status %> </p>
           <% end %>
         </div>
-        <div class="row">
+        <div class="row accept-reject-btn">
           <% if consultation.status == "Accepted" %>
             <%= link_to "Go To Room", consultation_path(consultation), class: 'main-button' %>
           <% end %>

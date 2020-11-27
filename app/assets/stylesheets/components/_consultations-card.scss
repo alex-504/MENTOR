@@ -101,6 +101,7 @@
     text-align: right;
     padding: 16px 0;
     font-size: 20px;
+    margin: 0;
   }
 
   .main-button {
@@ -109,6 +110,14 @@
 }
 .consultations-board {
   margin-bottom: 120px;
+}
+
+.bottom-btn {
+  text-align: right;
+}
+
+.accept-reject-btn {
+  align-items: center;
 }
 
 .consultations-board-card {
