@@ -7,13 +7,13 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Find a Mentor", mentors_path, class: "main-button" %>
+        <%# unless current_user.mentor %>
+        <%#= link_to "Become Mentor", new_mentor_path, class: "second-button" %>
+        <%# end %>
+      </li>
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Find a Mentor", mentors_path, class: "second-button" %>
-          <%# unless current_user.mentor %>
-          <%#= link_to "Become Mentor", new_mentor_path, class: "second-button" %>
-          <%# end %>
-        </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
                           <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
