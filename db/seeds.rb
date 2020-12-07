@@ -94,14 +94,16 @@ full_stack_tags.each do |name|
 end
 mentors << mentor
 
+first_name = Faker::Name.first_name
+
 user = User.create!(
-  name: "Yann Klein",
-  email: "yann.klein@me.com",
+  name: Faker::Name.name,
+  email: "#{first_name}@mentorhub.app",
   password: "password",
   role: "Coding Bootcamp Manager at LeWagon Tokyo",
-  linkedin_url: "https://www.linkedin.com/in/yann-klein/",
+  linkedin_url: "https://www.linkedin.com",
 )
-file = URI.open('https://avatars2.githubusercontent.com/u/26819547?s=460&u=ae79d8825ad1127723641cbf32a9a7e2ec221e7f&v=4')
+file = URI.open('https://i.pravatar.cc/150?img=1')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
@@ -132,15 +134,15 @@ end
   mentors << mentor
 end
 
-
+first_name = Faker::Name.first_name
 user = User.create!(
-  name: "Doug Berkley",
-  email: "douglas.berkley@yahoo.com",
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
   password: "password",
   role: "Co-Driver at Le Wagon Japan",
-  linkedin_url: "linkedin.com/in/dougberkley",
+  linkedin_url: "linkedin.com",
 )
-file = URI.open('https://avatars1.githubusercontent.com/u/25542223?s=460&u=503c4cf07a740eb09815bd9a5cbb0fbb36a3e79f&v=4')
+file = URI.open('https://i.pravatar.cc/150?img=5')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
@@ -171,13 +173,13 @@ end
 
 
 user = User.create!(
-  name: "Sylvain Pierre",
-  email: "sylvain.pierre@centraliens-nantes.net",
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
   password: "password",
   role: "Driver Le Wagon Japan",
-  linkedin_url: "linkedin.com/in/sylvainpierre",
+  linkedin_url: "linkedin.com/",
 )
-file = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQGDDtmc8EktDw/profile-displayphoto-shrink_800_800/0/1604650765591?e=1611792000&v=beta&t=8WDIluGG7_rjEJTZuM1a68FnsyajRp5fF8p3n5NfSfs')
+file = URI.open('https://i.pravatar.cc/150?img=8')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
@@ -208,13 +210,13 @@ end
 end
 
 user = User.create!(
-  name: "Noemi Ashizuka",
-  email: "noemi@me.com",
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
   password: "password",
   role: "Full-stack Web Developer",
-  linkedin_url: "https://www.linkedin.com/in/salvina-noemi-calanducci/",
+  linkedin_url: "https://www.linkedin.com/",
 )
-file = URI.open('https://media-exp1.licdn.com/dms/image/C5603AQHdrjYJyt07dA/profile-displayphoto-shrink_800_800/0/1584181248302?e=1611792000&v=beta&t=8Qftiit8X7nwZgpJV-bUc9XBEH03N5gyF9RUbwM05g0')
+file = URI.open('https://i.pravatar.cc/150?img=12')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
@@ -244,13 +246,13 @@ end
 end
 
 user = User.create!(
-  name: "Trouni Tiet",
-  email: "trouni.tiet@yahoo.com",
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
   password: "password",
   role: "Entrepreneur, Machine Learning Instructor, Full-Stack Developer",
-  linkedin_url: "linkedin.com/in/trouni",
+  linkedin_url: "linkedin.com",
 )
-file = URI.open('https://avatars1.githubusercontent.com/u/34345789?s=460&v=4')
+file = URI.open('https://i.pravatar.cc/150?img=16')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
@@ -321,13 +323,13 @@ end
 
 
 user = User.create!(
-  name: "Elizabeth Vo",
-  email: "liz.vo@yahoo.com",
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
   password: "password",
   role: "Consultant - Healthcare at Atikus Consulting K.K., Full-Stack Web Developer",
-  linkedin_url: "linkedin.com/in/elizabeth-vo",
+  linkedin_url: "linkedin.com/",
 )
-file = URI.open('https://media-exp1.licdn.com/dms/image/C5603AQH3mTv0cG9LWQ/profile-displayphoto-shrink_800_800/0?e=1611792000&v=beta&t=D8tGY9Tr8eR5nNSn9MTqBQofVcwu1HrOzvguVAA7ZXs')
+file = URI.open('https://i.pravatar.cc/150?img=17')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
@@ -338,7 +340,7 @@ mentor = Mentor.create!(
   availability: ["weekdays", "weekends"].sample,
   title: "Consultant - Healthcare at Atikus Consulting K.K., Full-Stack Web Developer",
 )
-customer_care_tags = ["Consulting", "Healthcare", "Facebook Marketing", "Full-Stack Web Development"]
+customer_care_tags = ["Consulting", "Healthcare", "Facebook Marketing"]
 customer_care_tags.each do |name|
   tag = Tag.where(name: name).first_or_create
   MentorTag.create(
@@ -357,13 +359,13 @@ end
 end
 
 user = User.create!(
-  name: "Tomo Norman",
-  email: "tomo.norman@yahoo.com",
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
   password: "password",
   role: "HR Operations Manager, Senior Instructor, Full-Stack Web Developer",
-  linkedin_url: "linkedin.com/in/tomonorman",
+  linkedin_url: "linkedin.com/",
 )
-file = URI.open('https://media-exp1.licdn.com/dms/image/C5603AQFnLbDsyxLe5A/profile-displayphoto-shrink_800_800/0/1516878295459?e=1611792000&v=beta&t=PlfWRMXuyaQuUrquisXkSnOCFyWjL9aWl8sK0hVjehA')
+file = URI.open('https://i.pravatar.cc/150?img=23')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
@@ -393,13 +395,13 @@ end
 end
 
 user = User.create!(
-  name: "Seigo Jinbo",
-  email: "seigo.jinbo@yahoo.com",
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
   password: "password",
   role: "Data Analyst, Full-Stack Web Developer",
-  linkedin_url: "linkedin.com/in/seigo-jinbo-2836771a7",
+  linkedin_url: "linkedin.com/",
 )
-file = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQFObj2fZk5h-Q/profile-displayphoto-shrink_800_800/0/1589424657368?e=1611792000&v=beta&t=A1fBnUrldN2M2swuVk6p8ydsD0vhBdNzQmNPcmcgYqg')
+file = URI.open('https://i.pravatar.cc/150?img=26')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
@@ -432,13 +434,13 @@ end
 
 
 user = User.create!(
-  name: "Yuping Kuei",
-  email: "yuping.kuei@yahoo.com",
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
   password: "password",
   role: "Operation Manager at OYO",
-  linkedin_url: "linkedin.com/in/yuping-kuei-779724175",
+  linkedin_url: "linkedin.com/",
 )
-file = URI.open('https://media-exp1.licdn.com/dms/image/C5603AQGS_GWszMyU9A/profile-displayphoto-shrink_800_800/0?e=1611792000&v=beta&t=3dFI28lPZ66BbjhwPMIXn2FXC8sTnquTcA9bNbEdToQ')
+file = URI.open('https://i.pravatar.cc/150?img=33')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
@@ -471,13 +473,13 @@ end
 
 
 user = User.create!(
-  name: "Jessica Ho",
-  email: "jessica.ho@yahoo.com",
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
   password: "password",
   role: "People Partners (Engineer Recruiter) - Mercari, Inc.",
-  linkedin_url: "linkedin.com/in/jessica-hwy",
+  linkedin_url: "linkedin.com/",
 )
-file = URI.open('https://media-exp1.licdn.com/dms/image/C5603AQEv73hnoPkAXQ/profile-displayphoto-shrink_800_800/0/1561373486104?e=1611792000&v=beta&t=3TXTnvhciFZgU9wiF7gTayVtkFnumJl4giAx08D79ac')
+file = URI.open('https://i.pravatar.cc/150?img=51')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
@@ -508,13 +510,13 @@ end
 
 
 user = User.create!(
-  name: "Takuhei Mizutani",
-  email: "taku.mizutani@yahoo.com",
+  name: Faker::Name.name,
+  email: Faker::Internet.email,
   password: "password",
   role: "Full-Stack Web Developer at Syncalyst",
   linkedin_url: "linkedin.com/",
 )
-file = URI.open('https://avatars0.githubusercontent.com/u/67130385?v=4')
+file = URI.open('https://i.pravatar.cc/150?img=52')
 user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 users << user
 
