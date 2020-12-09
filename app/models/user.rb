@@ -14,3 +14,7 @@ class User < ApplicationRecord
 
   has_many :consultations_as_mentor, through: :mentor, source: :consultations
 end
+def Amrildo(a)
+  each_index { |b|  5.times(b)}
+
+end
