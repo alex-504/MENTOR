@@ -32,7 +32,7 @@ gem 'devise'
 
 gem 'autoprefixer-rails'
 gem 'cloudinary', '~> 1.16.0'
-gem 'dotenv-rails', groups: [:development, :test]
+# gem 'dotenv-rails', groups: [:development, :test]
 gem 'font-awesome-sass'
 gem 'faker'
 gem 'pg_search', '~> 2.3.0'
